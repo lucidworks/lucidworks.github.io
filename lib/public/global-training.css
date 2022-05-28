@@ -1,0 +1,214 @@
+/* Solid colors */
+:root {
+    --dark-blue: rgba(9, 62, 115, 1.0);
+    --blue: rgba(31, 129, 204, 1.0);
+    --light-blue: rgba(118, 195, 237, 1.0);
+    --dark-teal: rgba(15, 145, 139, 1.0);
+    --teal: rgba(19, 197, 187, 1.0);
+    --light-teal: rgba(153, 237, 222, 1.0);
+    --dark-gold: rgba(209, 146, 19, 1.0);
+    --gold: rgba(251, 176, 22, 1.0);
+    --light-gold: rgba(254, 206, 135, 1.0);
+    --dark-pink: rgba(197, 37, 116, 1.0);
+    --pink: rgba(237, 48, 136, 1.0);
+    --light-pink: rgba(244, 153, 193, 1.0);
+    --dark-gray: rgba(93, 107, 120, 1.0);
+    --medium-gray: rgba(125, 139, 153, 1.0);
+    --gray: rgba(193, 203, 214, 1.0);
+    --light-gray: rgba(228, 234, 240, 1.0);
+    --white: rgba(255, 255, 255, 1.0);
+}
+
+/* Gradient colors */
+:root {
+    --grad-blue-teal: linear-gradient(to right, var(--blue), var(--teal));
+    --grad-pink-gold: linear-gradient(to right, var(--pink), var(--gold));
+    --grad-pink-blue: linear-gradient(to right, var(--pink), var(--blue));
+    --grad-gold-light-gold: linear-gradient(to right, var(--gold), var(--light-gold));
+}
+
+/* Shadows */
+:root {
+    --shadow-24: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.20);
+    --shadow-16: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.20);
+    --shadow-12: 0 12px 17px 2px rgba(0, 0, 0, 0.14), 0 5px 22px 4px rgba(0, 0, 0, 0.12), 0 7px 8px -4px rgba(0, 0, 0, 0.20);
+    --shadow-9: 0 9px 12px 1px rgba(0, 0, 0, 0.14), 0 3px 16px 2px rgba(0, 0, 0, 0.12), 0 5px 6px -3px rgba(0, 0, 0, 0.20);
+    --shadow-8: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.20);
+    --shadow-6: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.20);
+    --shadow-4: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.20);
+    --shadow-3: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.12), 0 1px 8px 0 rgba(0, 0, 0, 0.20);
+    --shadow-2: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.20);
+    --shadow-1: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.20);
+}
+
+/* Fonts */
+body,
+div,
+ul,
+li,
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+input {
+    font-family: 'arial', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Markdown element rules */
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5 {
+    padding: 0;
+    margin: 15px 0;
+    padding: 10px 0
+}
+
+h1 {
+    font-size: 22px;
+}
+
+h2 {
+    font-size: 16px;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+
+/* Images */
+img {
+    box-shadow: var(--shadow-6);
+}
+
+code {
+    padding: 5px 8px;
+    background: var(--light-gray);
+    color: var(--dark-blue);
+    text-shadow: 0px 1px 0px var(--white);
+    border-radius: 5px;
+    margin: 10px 0;
+    font-style: normal;
+    font-size: 1em;
+    box-decoration-break: clone;
+}
+
+pre code {
+    background: unset;
+    font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
+    font-feature-settings: normal;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    margin-bottom: 0;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+
+pre code p {
+    font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
+}
+
+blockquote {
+    background: var(--dark-teal);
+    margin-left: -1.75rem;
+    margin-right: 1.75rem;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-left: 1.42188rem;
+    padding-right: 0;
+    padding-top: 0;
+    margin-bottom: 1.75rem;
+    font-size: 1.00rem;
+    line-height: 1.75rem;
+    color: var(--white);
+    font-style: italic;
+    border-left: 0.32813rem solid hsla(0, 0%, 0%, 0.9);
+}
+
+button {
+  background-color: rgba(197, 37, 116, 1.0); 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+/* Lists */
+ol {
+    margin-left: 1.75rem;
+    margin-right: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    margin-bottom: 1.75rem;
+    list-style-position: outside;
+    list-style-image: none;
+}
+
+ol li::marker {
+    color: var(--dark-teal);
+    font-weight: 700;
+}
+
+
+ul {
+    margin-left: 1.75rem;
+    margin-right: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    margin-bottom: 1.75rem;
+    list-style-position: outside;
+    list-style-image: none;
+    list-style: disc;
+}
+
+ul li { padding: 5px 5px; }
+
+ul li::marker {
+    font-size: 18px;
+}
+
+
+/* Links */
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+    border-bottom-color: var(--teal);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    color: unset;
+    font-weight: 500;
+}
+
+a:hover {
+    border-bottom-width: 2px;
+}
