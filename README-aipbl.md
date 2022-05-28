@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Advanced Readme
+title: Intro to Machine Learning
 permalink: /aipbl/
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Advanced Readme
+title: Index and Query Profiles
 permalink: /afiqpro/
 ---
 

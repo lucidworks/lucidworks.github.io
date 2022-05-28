@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Advanced Readme
+title: Advanced Signals
 permalink: /afsig/
 ---
 
