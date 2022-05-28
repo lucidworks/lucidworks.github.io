@@ -18,7 +18,5 @@ Pages can be added to the site adding the following lines to the top of a new ma
   ``---``
   
 ### Site structure
-All pages are physically in the root of this repo.  The site structure is created virtually by the parser using the permalink information.  In the example above, using /AI/ in the permalink: field means that page will display at https://SilverRat.github.io/AI.  Further depth could be added with a value such as /AI/Lab1/
+This site will parse the files in the site looking for markdown files.  The site structure users see is created virtually by the parser using the permalink information at the top of each readme file.  In the example above, using /AI/ in the permalink: field means that page will display at https://lucidworks.github.io/AI.  Further depth could be added with a value such as /AI/Lab1/. Note, the actual markdown file is in the eLearning folder in the GitHub repository.
 
-### Theme Configuration
-Additional themes can be applied via GitHub in the Settings / Page section. The default themes can have different elements (sections/styles) "overridden by placing the appropriate file replacements (or empty files) in the appropriate paths in the repo.  Basically, if the parser encounters a local file where the theme file would be in the repo, the local file takes over. Details on [GitHub Pages Docs](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll)  
