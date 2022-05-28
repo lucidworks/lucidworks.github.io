@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Advanced Readme
+title: Javascript in Fusion
 permalink: /afjava/
 ---
 

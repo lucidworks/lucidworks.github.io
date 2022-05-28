@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Advanced Readme
+title: Queries
 permalink: /ffquery/
 ---
 

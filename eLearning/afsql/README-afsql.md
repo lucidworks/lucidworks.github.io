@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Advanced Readme
+title: SQL in Fusion
 permalink: /afsql/
 ---
 

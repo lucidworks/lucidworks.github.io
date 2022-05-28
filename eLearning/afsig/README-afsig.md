@@ -1,6 +1,6 @@
 ---
 layout: page
-title: BIG OLE TEST
+title: Advanced Signals
 permalink: /afsig/
 ---
 

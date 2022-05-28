@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Advanced Readme
+title: Document Clustering
 permalink: /aicluster/
 ---
 
