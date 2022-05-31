@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Predictive Merchandiser: Rewrites Lab
+title: Predictive Merchandiser - Rewrites Lab
 permalink: /pmrewrit/
 ---
 
