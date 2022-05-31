@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Predictive Merchandiser
+title: Predictive Merchandiser: Rules Lab
 permalink: /pmrules/
 ---
 
