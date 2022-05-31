@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Predictive Merchandiser
+title: Predictive Merchandiser: Merchandiser Dashboard Lab
 permalink: /pmexda/
 ---
 
