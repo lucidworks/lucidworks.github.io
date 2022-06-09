@@ -4,7 +4,7 @@ title: Document Clustering
 permalink: /aicluster/
 ---
 
-<link rel="stylesheet" href="./lib/public/global-training.css">
+<link rel="stylesheet" href="/lib/public/global-training.css">
 
 # Start your environment by clicking **Start Lab** above. 
 
