@@ -8,7 +8,7 @@ permalink: /nlp/
 
 # Start your environment by clicking **Start Lab** above. 
 
-## The environment should begin to load immediately as indicated by the Vocareum loading symbol. Please do not click *Start Lab* again. It may take a few minutes for the Fusion environment to fully display.
+## The environment should begin to load immediately. Please do not click *Start Lab* again. It may take a few minutes for the Fusion environment to fully display.
 
 When the Fusion Login page displays, login: <br>
     * USERNAME: ```admin```
