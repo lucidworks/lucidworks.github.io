@@ -8,7 +8,7 @@ permalink: /afsql/
 
 # Start your environment by clicking **Start Lab** above. 
 
-## The environment should begin to load immediately as indicated by the Vocareum loading symbol. Please do not click *Start Lab* again. It may take a few minutes for the Fusion environment to fully display.
+## The environment should begin to load immediately. Please do not click *Start Lab* again. It may take a few minutes for the Fusion environment to fully display.
 
 When the Fusion Login page displays, login:
    * USERNAME: ```admin```
@@ -135,15 +135,6 @@ Had we not indicated that we wanted them grouped together, our query would have 
     * With this query we are asking for a joining of how long a trip took with when that trip started
 
     * Here we place a limit of 100 due to the sheer volume of our query
-
-________
-
-If you would like to save your Fusion App to reference later, you can do it now:
-1. Return to the Fusion Launcher
-2. Hover over your app and click on the cog that appears in the lower right corner
-3. Within the box that opens, click **Export app to zip**
-
-_________
 
 ## Great job! If you would like to save your Fusion App to reference later, you can do it now:
 
