@@ -8,7 +8,7 @@ permalink: /afiqpro/
 
 # Start your environment by clicking **Start Lab** above. 
 
-## The environment should begin to load immediately as indicated by the Vocareum loading symbol. Please do not click *Start Lab* again. It may take a few minutes for the Fusion environment to fully display.
+## The environment should begin to load immediately. Please do not click *Start Lab* again. It may take a few minutes for the Fusion environment to fully display.
 
 When the Fusion Login page displays, login:
     
@@ -251,14 +251,6 @@ Notice the number and variety of these fields before continuing on.
 <br>
 
 52. Once finished, click **Apply**
-
-_______
-
-If you would like to save your Fusion App to reference later, you can do it now:
-1. Return to the Fusion Launcher
-2. Hover over your app and click on the cog that appears in the lower right corner
-3. Within the box that opens, click **Export app to zip**
-_________
 
 ## Congratulations! You have successfully completed the Index and Query Profiles lab. If you would like to save your Fusion App to reference later, you can do it now:
 
