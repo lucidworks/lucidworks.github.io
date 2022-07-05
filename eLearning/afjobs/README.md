@@ -8,7 +8,7 @@ permalink: /afjobs/
 
 # Start your environment by clicking **Start Lab** above. 
 
-## The environment should begin to load immediately as indicated by the Vocareum loading symbol. Please do not click *Start Lab* again. It may take a few minutes for the Fusion environment to fully display.
+## The environment should begin to load immediately. Please do not click *Start Lab* again. It may take a few minutes for the Fusion environment to fully display.
 
 When the Fusion Login page displays, login:
     
@@ -147,13 +147,6 @@ In this last scenario, the job history collection is eating far too much memory.
 27. Click **Save**
 
 We have changed the schedule of the job from “4:25:00 AM on every Sunday, every month” to “3:30 AM on Sunday, Tuesday, and Wednesday, every month.”
-_______
-
-If you would like to save your Fusion App to reference later, you can do it now:
-1. Return to the Fusion Launcher
-2. Hover over your app and click on the cog that appears in the lower right corner
-3. Within the box that opens, click **Export app to zip**
-_______
 
 ## Congratulations! You have successfully created clean-up jobs and REST call jobs, and should now be more familiar with job management.
 
