@@ -8,7 +8,7 @@ permalink: /fplay/
 
 # Welcome to the Fusion Playground. This is an interactive space where you can get hands-on experience with Fusion. Here you'll have an unlimited number of 60-minute sessions to explore what Fusion has to offer. 
 
-## Start your environment by clicking **Start Lab** above. The environment should begin to load immediately as indicated by the Vocareum loading symbol. When the Fusion Login page opens, login:
+## Start your environment by clicking **Start Lab** above. The environment should begin to load immediately. When the Fusion Login page opens, login:
 * USERNAME: ```admin```
 * PASSWORD: ```password123```
 
