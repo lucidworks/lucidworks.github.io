@@ -376,16 +376,6 @@ Find all stations build between the years 1988 to 1990.
 
 Notice that this time we used a range function to find our results. This saves us from having to include every year.
 
-_________
-
-If you would like to save your Fusion App to reference later, you can do it now:
-
-1. Return to the Fusion Launcher
-
-2. Hover over your app and click on the cog that appears in the lower right corner
-Within the box that opens, click **Export app to zip** 
-
-_________
 
 ## Congratulations! By now you should be more comfortable using the eDisMax Parser, facets, and function queries. If you would like to save your Fusion App to reference later, you can do it now:
 
