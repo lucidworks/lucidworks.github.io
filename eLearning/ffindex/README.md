@@ -102,7 +102,7 @@ This field type is **pdate**
 
 18.  Click **Run** then click **Start**. Again, the job will take a few minutes to complete. When the job finishes running, click **Save**
 
-19.  Return to the **Fields** window. Your new fields should have Num Docs values
+19.  Return to the **Fields** window. Your new fields should have Num Docs values. If you don't see Num Docs values, close out of **Fields** and reopen the window.
 
 20.  Add the following fields and their parameters by repeating **step 15** for each row:
 
@@ -114,7 +114,7 @@ This field type is **pdate**
 
 22. Click **Run** then click **Start**, when the job finishes running, click **Save**
 
-23. Return to the **Fields** window. Close it and reopen it to refresh. Notice that almost all the new static fields have Num Docs values
+23. Return to the **Fields** window. Close it and reopen it to refresh. Notice that almost all the new static fields have Num Docs values.
 
 24. Return to the **Index Workbench**, and click on the arrow next to the **Parser** icon
 
