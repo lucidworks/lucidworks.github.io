@@ -121,7 +121,7 @@ When the Fusion Login page displays, login:
 <br />
 
 
-23. Repeat step 21 to add two more **Search Fields**: ```brand``` and ```name```, then click **Appy**
+23. Repeat step 21 to add two more **Search Fields**: ```brand``` and ```name```, then click **Apply**
 
 >Note: By applying new search fields into the Query Fields stage, we can already see changes in the results list
 
