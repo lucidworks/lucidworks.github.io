@@ -87,7 +87,7 @@ When the Fusion Login page displays, login:
 
 17.  Return to the **Fields** window. Your new fields should have Num Docs values. If you don't see Num Docs values, close out of **Fields** and reopen the window.
 
-18.  Add the following fields and their parameters by repeating **step 15** for each row:
+18.  Add the following fields and their parameters by repeating **steps 12-13** for each row:
 
 <img src="https://storage.googleapis.com/fusion-datasets/5.4_Markdown_images/01%20FF/Ingestion/step%2019%20field%20params.png" style="height: 350px; width:700px;"/>
 
