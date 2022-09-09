@@ -76,6 +76,7 @@ In this task we will set up a JS stage that instantiates an HTTP client, accesse
 16. Find the Script Body, clear what is in it by default, and copy and paste the following to it:
 
 ```
+
 function(doc){
   var e = java.lang.Exception;
   try{  
@@ -98,6 +99,7 @@ function(doc){
 > Note: For reference, see screenshot below
 
 ```
+
 var BufferedReader = java.io.BufferedReader;
   var InputStreamReader = java.io.InputStreamReader;
   var HttpResponse = org.apache.http.HttpResponse;
@@ -120,6 +122,7 @@ The first thing this stage will do is set up an HTTP client and a REST request
 18. In the Script Body of the REST Call stage, <u>after</u> the variable definitions, add the following within the **try clause**:
 
 ```
+ 
  var client = HttpClientBuilder.create().build();
  var url = new String("http://www.google.com/search?q=httpClient");
  var request = new HttpGet(url);
@@ -140,6 +143,7 @@ Next, the stage will execute the REST call and construct a response object to pa
 19. In the Script Body add the following to the <u>end</u> of the **try clause**:
 
 ```
+
 var response = client.execute(request);
  var rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
  var result = new StringBuffer();
@@ -160,6 +164,7 @@ Finally, the stage will parse the response using Jsoup, fetch the URL’s title,
 20. In the Script Body, add the following to the <u>end</U> of the **try clause**:
 
 ```
+
 var Jsoup = org.jsoup.Jsoup;
  var httpDoc = Jsoup.parse(result);
  var httpTitle = httpDoc.select("title").first();
@@ -271,6 +276,7 @@ In this case, we will use Fusion as our target endpoint, using the admin passwor
 37. Add the following to the **Script Body**:
 
 ```
+
 function(doc){
 var e = java.lang.Exception;
   try {
@@ -287,7 +293,7 @@ var e = java.lang.Exception;
 38. In the Script Body, add the following class declarations <u>to the top</u> of **function(doc)**:
 
 ```
-var UsernamePasswordCredentials = org.apache.http.auth.UsernamePasswordCredentials;
+  var UsernamePasswordCredentials = org.apache.http.auth.UsernamePasswordCredentials;
   var AuthScope = org.apache.http.auth.AuthScope;
   var BasicCredentialsProvider = org.apache.http.impl.client.BasicCredentialsProvider;
   var HttpClientBuilder = org.apache.http.impl.client.HttpClientBuilder;
@@ -298,7 +304,8 @@ var UsernamePasswordCredentials = org.apache.http.auth.UsernamePasswordCredentia
 39.  Add credentials to the block of class declarations <u>at the top</u> of **function(doc)**:
 
 ```
- var pwd = "password123";
+ 
+var pwd = "password123";
  var user = "admin";
  var fusionUrl = "http://localhost:8764";
  var client = null;
@@ -315,6 +322,7 @@ Now that the building blocks are in place, we can instantiate the client
 40. Add the following code to the **try clause** <u>within</u> **fuction(doc)**:
 
 ```
+
 var authJson = "{\"username\":\"" + user + "\", \"password\":\"" + pwd + "\"}";
     var authUrl = fusionUrl + "/api/session?realmName=native";
     var provider = new BasicCredentialsProvider();
@@ -331,6 +339,7 @@ Finally, we can use the client-plus-credentials to build a REST call and establi
 41. Add the following code to the <u>end</u> of the **try clause** <u>within</u> **function(doc)**:
 
 ```
+
 var session = new HttpPost(authUrl);
     var params = new StringEntity(authJson);
     session.addHeader("content-type", "application/json");
