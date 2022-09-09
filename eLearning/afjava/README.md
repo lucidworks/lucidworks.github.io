@@ -12,8 +12,8 @@ permalink: /afjava/
 
 When the Fusion Login page displays, login:
     
-    * USERNAME: ```admin```
-    * PASSWORD: ```password123```
+* USERNAME: ```admin```
+* PASSWORD: ```password123```
 
 # In this lab  you will learn how to modify a document via REST Call, as well as authenticate a REST call. Let's get started!
 
