@@ -430,7 +430,8 @@ function(doc){
 
 <summary>Click to expand the Authenticated Call full script body</summary> 
 
-```function(doc){
+```
+function(doc){
   var e = java.lang.Exception;
   var UsernamePasswordCredentials = org.apache.http.auth.UsernamePasswordCredentials;
   var AuthScope = org.apache.http.auth.AuthScope;
