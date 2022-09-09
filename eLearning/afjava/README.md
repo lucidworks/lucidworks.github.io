@@ -11,6 +11,7 @@ permalink: /afjava/
 ## The environment should begin to load immediately. Please do not click *Start Lab* again. It may take a few minutes for the Fusion environment to fully display.
 
 When the Fusion Login page displays, login:
+    
     * USERNAME: ```admin```
     * PASSWORD: ```password123```
 
