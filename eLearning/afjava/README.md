@@ -346,10 +346,9 @@ If you feel your codes aren't working, you can copy the full codes for the REST 
 
 <summary>Click to expand the REST Call full script body </summary> 
 
-```Javascript
-function(doc){
+```function(doc){
   var e = java.lang.Exception;
-var BufferedReader = java.io.BufferedReader;
+  var BufferedReader = java.io.BufferedReader;
   var InputStreamReader = java.io.InputStreamReader;
   var HttpResponse = org.apache.http.HttpResponse;
   var HttpClient = org.apache.http.client.HttpClient;
@@ -358,36 +357,71 @@ var BufferedReader = java.io.BufferedReader;
   var String = java.lang.String;
   var userAgent = org.apache.http.HttpHeaders.USER_AGENT;
   var HttpClientBuilder = org.apache.http.impl.client.HttpClientBuilder;
-var System = java.lang.System;
+  var System = java.lang.System;
+
+
+
   try{  
-     var httpTitle = "";
-  if(System.getProperty("page_sub_title") == null){
-     var client = HttpClientBuilder.create().build();
- var url = new String("http://www.google.com/search?q=httpClient");
- var request = new HttpGet(url);
- request.addHeader("User-Agent", userAgent);
-   var response = client.execute(request);
- var rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
- var result = new StringBuffer();
- var line = "";
- while ((line = rd.readLine()) !== null) {
-   result.append(line);
- } 
-var Jsoup = org.jsoup.Jsoup;
- var httpDoc = Jsoup.parse(result);
- var httpTitle = httpDoc.select("title").first();
- System.setProperty("page_sub_title", httpTitle);
- } else {
-   httpTitle = System.getProperty("page_sub_title");
- }
+    
+    var httpTitle = "";
 
- doc.addField("sub_title", httpTitle);
 
+
+    if(System.getProperty("page_sub_title") == null){ 
+      var client = HttpClientBuilder.create().build();
+
+
+
+      var url = new String("http://www.google.com/search?q=httpClient");
+      var request = new HttpGet(url);
+      request.addHeader("User-Agent", userAgent);
+
+
+
+      var response = client.execute(request);
+
+
+
+      var rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+      var result = new StringBuffer();
+      var line = "";
+
+
+
+      while ((line = rd.readLine()) !== null) {
+        result.append(line);
+      }
+
+
+
+      var Jsoup = org.jsoup.Jsoup;
+      var httpDoc = Jsoup.parse(result);
+      var httpTitle = httpDoc.select("title").first();
+
+
+
+      System.setProperty("page_sub_title", httpTitle);
+
+
+
+    } else {
+      httpTitle = System.getProperty("page_sub_title");
+    }
+
+
+
+    doc.addField("sub_title", httpTitle);
+    
   }catch(e){
     logger.error(e.getLocalizedMessage());
   }
+
+
+
   return  doc;
 }
+
+
 ```
 
 </details>
@@ -396,45 +430,47 @@ var Jsoup = org.jsoup.Jsoup;
 
 <summary>Click to expand the Authenticated Call full script body</summary> 
 
-```Javascript
-function(doc){
-
-var pwd = "Lucidworks1";
- var user = "admin";
- var fusionUrl = "http://localhost:8764";
- var client = null;
-
-var UsernamePasswordCredentials = org.apache.http.auth.UsernamePasswordCredentials;
+```function(doc){
+  var e = java.lang.Exception;
+  var UsernamePasswordCredentials = org.apache.http.auth.UsernamePasswordCredentials;
   var AuthScope = org.apache.http.auth.AuthScope;
   var BasicCredentialsProvider = org.apache.http.impl.client.BasicCredentialsProvider;
   var HttpClientBuilder = org.apache.http.impl.client.HttpClientBuilder;
   var HttpPost = org.apache.http.client.methods.HttpPost;
   var StringEntity = org.apache.http.entity.StringEntity;
-
-
-var e = java.lang.Exception;
+  
+  var pwd = "password123";
+  var user = "admin";
+  var fusionUrl = "http://localhost:6764";
+  var client = null;
+ 
   try {
-
-var authJson = "{\"username\":\"" + user + "\", \"password\":\"" + pwd + "\"}";
+    var authJson = "{\"username\":\"" + user + "\", \"password\":\"" + pwd + "\"}";
     var authUrl = fusionUrl + "/api/session?realmName=native";
     var provider = new BasicCredentialsProvider();
     var credentials = new UsernamePasswordCredentials(user, pwd);
     provider.setCredentials(AuthScope.ANY, credentials);
+ 
     var client = HttpClientBuilder.create()
-       .setDefaultCredentialsProvider(provider)
-       .build();
-
- var session = new HttpPost(authUrl);
+      .setDefaultCredentialsProvider(provider)
+      .build();
+    
+    var session = new HttpPost(authUrl);
     var params = new StringEntity(authJson);
     session.addHeader("content-type", "application/json");
-    session.setEntity(params);   
+    session.setEntity(params);
+ 
     var response = client.execute(session);
-
+    
+    //Add any REST calls you would like to make to Fusion here
+ 
   } catch (e) {
     logger.error("Error getting httpclient " + e.getLocalizedMessage());
   }
-  return  doc;
+  return doc;
 }
+
+
 ```
 
 </details>
