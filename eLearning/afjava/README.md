@@ -346,7 +346,8 @@ If you feel your codes aren't working, you can copy the full codes for the REST 
 
 <summary>Click to expand the REST Call full script body </summary> 
 
-```function(doc){
+```Javascript
+function(doc){
   var e = java.lang.Exception;
   var BufferedReader = java.io.BufferedReader;
   var InputStreamReader = java.io.InputStreamReader;
