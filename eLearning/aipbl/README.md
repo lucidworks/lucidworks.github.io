@@ -34,26 +34,11 @@ When the Fusion Login page displays, login:
     * Copy the **Transform Scala** below and paste it into the **Transform Scala** text box
 
 <pre><code>
-<p id="copy">def transform(inputDF: Dataset[Row]) : Dataset[Row] = {
+def transform(inputDF: Dataset[Row]) : Dataset[Row] = {
 inputDF.filter("department IN ('ACCESSORIES', 'APPLIANCE', 'COMPUTERS')")
-}</p>
+}
 </pre></code>
-<button type="button" onclick="copyEvent('copy')" style="background-color:#C52574;  border: none;
-  color: white;
-  padding: 5px 16px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;">Copy</button>
 
-<script>
-    function copyEvent(id)
-    {
-        var str = document.getElementById(id);
-        window.getSelection().selectAllChildren(str);
-        document.execCommand("Copy")
-    }
-</script> 
 <br>
 
 6. Close the **Transform Scala** text box. Click **Save**, then click **Run**, then click **Start**
@@ -72,7 +57,7 @@ inputDF.filter("department IN ('ACCESSORIES', 'APPLIANCE', 'COMPUTERS')")
     * Copy the **Transform Scala** below
 
 <pre><code>
-<p id="copy2">import java.sql.Timestamp
+import java.sql.Timestamp
 def transform(allClicks: Dataset[Row]) : Dataset[Row] = {
 val ecommerceFullCatalog = spark.read.parquet("gs://training-ecommerce/catalog")
 val someHardGoods = ecommerceFullCatalog.filter("department IN ('ACCESSORIES', 'APPLIANCE', 'COMPUTERS')")
@@ -90,24 +75,9 @@ val newDF = usefulClicks
 .withColumnRenamed("timestamp_tdt", "orig_timestamp_tdt")
 .withColumn("timestamp_tdt", addTime($"orig_timestamp_tdt", lit(diff)))
 newDF
-}</p>
+}
 </pre></code>
-<button type="button" onclick="copyEvent('copy2')" style="background-color:#C52574;  border: none;
-  color: white;
-  padding: 5px 16px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;">Copy</button>
 
-<script>
-    function copyEvent(id)
-    {
-        var str = document.getElementById(id);
-        window.getSelection().selectAllChildren(str);
-        document.execCommand("Copy")
-    }
-</script> 
 <br>
         
 10. Close the **Transform Scala** text box. Click **Save**, then click **Run**, then click **Start**
