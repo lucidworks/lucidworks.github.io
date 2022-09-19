@@ -6,8 +6,6 @@ permalink: /airecomm/
 
 <link rel="stylesheet" href="/lib/public/global-training.css">
 
-# Start your environment by clicking **Start Lab** above. 
-
 ## The environment should begin to load immediately. Please do not click *Start Lab* again. It may take a few minutes for the Fusion environment to fully display.
 
 When the Fusion Login page displays, login:
