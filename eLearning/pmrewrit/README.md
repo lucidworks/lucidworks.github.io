@@ -6,8 +6,6 @@ permalink: /pmrewrit/
 
 <link rel="stylesheet" href="/lib/public/global-training.css">
 
-# Start your environment by clicking **Start Lab** above. 
-
 ## The environment should begin to load immediately. Please do not click *Start Lab* again. It may take a few minutes for the Fusion environment to fully display.
 
 1. When the Fusion Login page displays, login:
@@ -33,9 +31,7 @@ If you get stuck, we have provided helpful details to keep you moving.
 
 >Note: You will see a loading icon initially on the Merchandiser Dashboard. The next step will point Predictive Merchandiser to the appropriate application to pull from. 
 
-2. Click the **Rules** icon on the left navigation panel. Select the app **Electronics**. 
-
-    * Navigate to the **Merchandiser** dashboard to begin.
+2. Select the app **Electronics**. Select **Product Discovery**.
 
 3. After looking through some data, you have underperforming queries you need to resolve. **Begin a task** to start editing your catalog.
 
