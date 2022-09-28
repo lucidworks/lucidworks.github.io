@@ -32,8 +32,8 @@ If you get stuck, we have provided helpful details to keep you moving.
 
 >Note: You will see a loading icon initially on the Merchandiser Dashboard. The next step will point Predictive Merchandiser to the appropriate application to pull from. 
 
-2. Click the **Rules** icon on the left navigation panel. Select the app **Electronics**. 
-    * Navigate to the **Merchandiser** dashboard to begin.
+2. Select the app **Electronics** in the dropdown that displays, then click the **Merchandiser** icon on the left navigation panel. 
+    * Click **Product Discovery** to begin.
 
 3. You need to **begin a task** to start editing your catalog. How can you do this?
 
