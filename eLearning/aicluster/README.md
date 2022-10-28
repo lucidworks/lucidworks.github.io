@@ -14,7 +14,7 @@ When the Fusion Login page displays, login:
 
 ## In this lab  you will set up clustering, evaluate results, and tune the clustering job! Let's get started by setting up clustering
  
-1. Click on the app **Labs** to enter the *Fusion workspace*, this is where you can build and test document clustering
+1. Click on the app **Labs** to enter the *Fusion workspace*, this is where you can build and test document clustering. Before proceeding with the lab, please make your way to the JOBS tab under COLLECTIONS located on the side menu. Make sure that both the BestBuy_catalog and BestBuy_signals_labs jobs have run. If you see a caution sign, please run that job again before attempting to go any further.
 
 # Setting up Clustering
 
