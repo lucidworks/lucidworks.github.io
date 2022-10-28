@@ -15,7 +15,7 @@ When the Fusion Login page displays, login:
 
 ## In this lab  you will inspect a collection, train a classifier model, implement classification at query time, and test the classifier pipeline! Let's get started by inspecting the collection on the app that you built in the first lab.
 
-1. Click on the app **Labs** to enter the *Fusion workspace*, this is where you can build and test the classifier model
+1. Click on the app **Labs** to enter the *Fusion workspace*, this is where you can build and test the classifier model. Before proceeding with the lab, please make your way to the JOBS tab under COLLECTIONS located on the side menu. Make sure that both the BestBuy_catalog and BestBuy_signals_labs jobs have run. If you see a caution sign, please run that job again before attempting to go any further.
 
 # Inspecting the Collection
 
