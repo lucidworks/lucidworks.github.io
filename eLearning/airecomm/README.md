@@ -14,7 +14,7 @@ When the Fusion Login page displays, login:
 
 ## In this lab  you will configure recommendations, verify successful model builds, test item-item recommendations and test user-item recommendations! Let's get started by enabling recommendations
 
-1. Click on the app **Labs** to enter the *Fusion workspace*, this is where you can build and configure recommenders.
+1. Click on the app **Labs** to enter the *Fusion workspace*, this is where you can build and configure recommenders. Before proceeding with the lab, please make your way to the JOBS tab under COLLECTIONS located on the side menu. Make sure that both the BestBuy_catalog and BestBuy_signals_labs jobs have run. If you see a caution sign, please run that job again before attempting to go any further.
 
 2. Hover over the **RELEVANCE** icon in the sidebar, then click **Recommendations**.
 
