@@ -185,6 +185,8 @@ Since we want to compare pipelines via Profile, we need to make Profiles_Test_2 
 
 34. For DATASOURCE ID, enter ``profiles_test``. For FILE ID, enter ``profiles_test.json``
 
+    a. Save the job before proceeding.
+
 35. **Run** and **Start** the job. Click **Save** after job status reads Success
 
 36. Navigate to the **Query Workbench** to review the imported data
@@ -203,7 +205,7 @@ Since we want to compare pipelines via Profile, we need to make Profiles_Test_2 
 
 39. Click on show fields for one of the documents
 
-Notice the number and variety of these fields before continuing on.
+>Notice the number and variety of these fields before continuing on.
 
 <img src="https://storage.googleapis.com/fusion-datasets/5.4_Markdown_images/02%20AF/Index_and_Query_Profiles_3/Index%20and%20Query%20Profiles_7.png" style="height: 325px; width:580px;"/>
 
@@ -219,37 +221,45 @@ Notice the number and variety of these fields before continuing on.
 
 44. Navigate to Datasources and click **Add+**
 
-45. Select File Upload
+45. Select **File Upload**
 
-    a. Datasource ID: **profiles_test_2**
+    a. Datasource ID: ``profiles_test_2``
 
-    b. Choose to upload profiles_test.json
+    b. Pipeline ID: ``Profiles_Test_2``
 
-46. Click **Upload File** and then click **Save**
+    b. FILE ID: ``profiles_test.json``
+
+    c. Save the job before proceeding.
+
+>Notice that the Pipeline now points to **Profiles_Test_2**
+
+46.  **Run** and **Start** the job. Click **Save** after job status reads Success
 
 <img src="https://storage.googleapis.com/fusion-datasets/5.4_Markdown_images/02%20AF/Index_and_Query_Profiles_3/Index%20and%20Query%20Profiles_8.png" style="height: 325px; width:580px;"/>
 
 <br>
 
->Notice that the Pipeline now points to Profiles_Test_2
+47. Now that we have indexed both collections, we can compare our results in the **Query Workbench** of each collection.
+
+>Notice that **Profiles_Test_2** contains fewer documents and they all share the **Drama** genre.
 
 # Query Profiles
 
-47. From the Collections Manager, in the collection dropdown, select Profiles_Test
+48. From the Collections Manager, in the collection dropdown, select Profiles_Test
 
-48. Navigate to **Query Profiles**
+49. Navigate to **Query Profiles**
 
-49. Select Query Profile **Profiles_Test**
+50. Select Query Profile **Profiles_Test**
 
-50. Under Query Params, scroll down and click **New params**
+51. Under Query Params, scroll down and click **New params**
 
-51. In the window that opens, enter the values from the table below:
+52. In the window that opens, enter the values from the table below:
 
 <img src="https://storage.googleapis.com/fusion-datasets/5.4_Markdown_images/02%20AF/Index_and_Query_Profiles_3/Screen%20Shot%202021-07-08%20at%206.38.37%20PM.png" style="height: 150px; width:350px;"/>
 
 <br>
 
-52. Once finished, click **Apply**
+53. Once finished, click **Apply**
 
 ## Congratulations! You have successfully completed the Index and Query Profiles lab. If you would like to save your Fusion App to reference later, you can do it now:
 
