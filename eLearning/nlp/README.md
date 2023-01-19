@@ -78,7 +78,7 @@ When the Fusion Login page displays, login: <br>
 
 <br>
 
->Note: This will "comment out" everything before line 15, making it inactive
+>Note: This will "comment out" everything before line 42, making it inactive
 
 17. Replace line 44 of the script with the following:
 
