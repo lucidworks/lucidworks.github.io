@@ -105,12 +105,12 @@ Your script should resemble the image below:
 21. Remove the existing text after the ```*/```, and replace it with the following code:
 
 
-`doc.addField("ner_labels_ss", modelOutput.get("ner_labels"))
-doc.addField("ner_offsets_ss", modelOutput.get("ner_offsets"))
-doc.addField("pos_offsets_ss", modelOutput.get("pos_offsets"))
-doc.addField("pos_labels_ss", modelOutput.get("pos_labels"))
-doc.addField("lemma_offsets_ss", modelOutput.get("lemma_offsets"))
-doc.addField("sentence_offsets_ss", modelOutput.get("sentence_offsets"))`
+<p>doc.addField("ner_labels_ss", modelOutput.get("ner_labels"))<br>
+doc.addField("ner_offsets_ss", modelOutput.get("ner_offsets"))<br>
+doc.addField("pos_offsets_ss", modelOutput.get("pos_offsets"))<br>
+doc.addField("pos_labels_ss", modelOutput.get("pos_labels"))<br>
+doc.addField("lemma_offsets_ss", modelOutput.get("lemma_offsets"))<br>
+doc.addField("sentence_offsets_ss", modelOutput.get("sentence_offsets"))
 
 <br>
 
@@ -140,9 +140,9 @@ doc.addField("sentence_offsets_ss", modelOutput.get("sentence_offsets"))`
 
 28. Click the **Save** button. Then, click **Run**, and **Start**. 
 
-    a. *Note that this could take up to 5 minutes to completely run.* Once the job status indicates success, click **Save**
+    a. *Note that this particular job could take up to 15 minutes due to the constraints of the lab environment. Fortunately we only need to wait for 3 to 5 minutes before we start seeing results.
 
-29. Hover over QUERYING and click **Query Workbench**
+29. Please wait for 3 to 5 minutes and then hover over QUERYING and click **Query Workbench**
 
 30. Under the first result, click **show fields**
 
