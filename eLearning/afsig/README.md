@@ -13,7 +13,7 @@ When the Fusion Login page displays, login:
 * USERNAME: ```admin```
 * PASSWORD: ```password123```
 
-# In this lab  you will learn how to use aggregated signals, how to apply and analyze signal boosting. Let's get started!
+# In this lab you will learn how to use aggregated signals, how to apply and analyze signal boosting. Let's get started!
 
 > Note: You may need to adjust the size of the instructions panel to fully view results in the UI. Toggle the window sizes as needed.
 
@@ -25,7 +25,7 @@ When the Fusion Login page displays, login:
 
 3. Change collection: **Electronics_signals_aggr**
 
-4. In the App tool menu, gover over QUERYING and click **Query Workbench**
+4. In the App tool menu, hover over QUERYING and click **Query Workbench**
 
 > Notice that no result turn up and you see an API Error. That is because the Apply Rules stage is interfering with the data.
 
