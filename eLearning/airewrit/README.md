@@ -6,109 +6,273 @@ permalink: /airewrit/
 
 <link rel="stylesheet" href="/lib/public/global-training.css">
 
-## The environment should begin to load immediately. Please do not click *Start Lab* again. It may take a few minutes for the Fusion environment to fully display.
+## It may take a few minutes to fully load and display the Fusion environment. Please do not click *Start lab* again. 
+<br>
 
-When the Fusion Login page displays, login:
-* USERNAME: ```admin```
-* PASSWORD: ```password123```
+>When the Fusion Login page displays, login:
+>* USERNAME: ```admin```
+>* PASSWORD: ```password123```
 
-## In this lab you will ingest data so that you can enhance relevancy using query rewriting! Let's get started by importing the relevancy app
+<br>
 
-# Configuring the Relevancy App
+## Welcome to the Query Analytics Lab! <br> Through this set of lab activities, you will practice using query rewriting to enhance the relevancy of search results.
 
-1. Click on the app **relevancy-app** to enter the *Fusion workspace*, this is where you can ingest the data
+---
+<br>
 
-2. Hover over the **COLLECTIONS** icon in the sidebar, then click **Jobs**
+For this lab, we will using the **relevancy-app** that has already been configured for our lab environment. 
 
-3. Select and run each of the following jobs in the order listed below:
-    * ``relevancy``
-    * ``relevancy_signals``
-    * ``relevancy_click_signals_aggregation``
+1. On the Fusion launch page, click the **relevancy-app** to open it and enter the Fusion workspace.
 
->Note: Success! The jobs will take about up to three minutes each, when it's done, the "running" icon will change to a "sunshine". If the job fails initially, rerun the job again.
+<br>
 
-4. Hover over the **QUERYING** icon in the sidebar, then click **Query Workbench**. Check the first few results to ensure the job was run successfully
+## Configuring the App
 
-# Relevancy Enhancement Tactics
+Before we get started on our lab exercises, we need to run several jobs to prepare our app data.
 
-5. Hover over the **COLLECTIONS** icon in the sidebar, then click **Jobs**. Click on and run ``relevancy_head_tail``
+2. In the left navigation pane, click **Collections**, then select **Jobs** from the list. 
 
-<img src="https://storage.googleapis.com/fusion-datasets/5.4_Markdown_images/03%20AI/Lab%203%20Head-tail.png" style="height: 300px; width:500px;"/>
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/navigation/nav_collections.png" style="height: 300px; width:185px;"/>
 
->Note: Success! The job will take about a few minutes, when it's done, the "running" icon will change to a "sunshine". 
+<br>
 
-6. Hover over the **RELEVANCE** icon in the sidebar, then click **Rules**. A new tab will open in your browser. Keep this tab open as we will revisit it through the training session.
+3. Click `relevancy` to open the job's configuration window. 
 
-7. Click the **Rewrite** icon in the sidebar to access the Underperforming Query Rewriting dashboard
+4. Click **Run**, then click **Start** in the dialog to start the job.
 
-8. Click **Head/Tail** and find **dsl router** in the list of rewrites
+>A reminder for all the jobs we will run in this lab: the jobs should be run one at a time, and will each take a couple minutes to run. Note that the **Running** indicator displays while the job is in process, and will change to **Success** when the job is complete. If the initial attempt to run the job fails, go ahead and rerun it. 
 
-<img src="https://storage.googleapis.com/fusion-datasets/5.4_Markdown_images/03%20AI/Head-tail%20rewrites%20nav.png" style="height: 300px; width:500px;"/>
+5. Once the job is complete, click the **X** to close the dialog.
 
-9. Notice that Status is set to auto and that Published is set to yes. This is because the Head/Tail suggestion falls into the auto publish category set by the head-tail relevancy job we noted earlier in training. 
-    * Click on **Auto** and select **Approved** to change the status to approved. 
-    * The change in status will unpublish the rewrite. To publish, hover over the rule and click the **green up arrow** in the Published column. Confirm you want to publish by clicking **Publish** in the Publish Rules box that appears. 
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/airewrit/airewrit_relevancyjob.png"/>
 
-10. Return to the Fusion tab. Hover over the **QUERYING** icon in the sidebar, then click **Query Workbench**
+<br>
 
-11. Toggle off the **Text Tagger** stage in the query pipeline by clicking on the green circle. Update the **View As** option to **Debug**. This is located in the bottom right side of the query workbench
+6. Repeat steps 3-5 to run the following jobs in the order listed below:
+* ```relevancy_signals```
+* ```relevancy_click_signals_aggregation```
 
-12. Execute a search for **dsl router**
+> Once all jobs have successfully run, you can navigate to the **Query Workbench** (**Querying > Query Workbench**), and check the first few results to ensure the jobs ran successfully.
 
->Note: Notice what Fusion is using to perform this search in the rawquerystring and querystring sections
+<br>
 
-13. Toggle on the **Text Tagger** stage by clicking on the grey circle. If the view does not automatically update, requery dsl router to see the change
+## Head/Tail Analysis Rewrites
 
->Note: Notice the search enhancement when we use Query Rewrite principles by turning on the Text Tagger stage. This shows the search enhancement when we use Query Rewrite principles through the Text Tagger stage. Notice the updated search parameters Fusion is using to perform this search in the rawquerystring and querystring sections
+For our first lab exercise, we are going to examine head-tail queries and how we can add boosting factors to enhance our returned results. 
 
-<img src="https://storage.googleapis.com/fusion-datasets/5.4_Markdown_images/03%20AI/Lab%203%20Query%20Workbench%20Head-tail.png" style="height: 200px; width:400px;"/>
+Let's start with running one more job, which will allow us to compare the head/tail results from some queries.
 
-14. Hover over the **COLLECTIONS** icon in the sidebar, then click **Jobs**. Click on and run ``relevancy-spell-correction``
+7. Navigate back to the **Jobs** tab, and repeat steps 3-5 to run the ```relevancy_head_tail``` job.
 
->Note: Success! The job will take about a few minutes, when it's done, the "running" icon will change to a "sunshine". 
+<br>
 
-15. Return to the **Query Rewriting** browser tab 
+Once it has been successfully run, we want to view the results.
 
-16. Click **Misspelling** and find any entry in the list of rewrites
+8. In the left navigation pane, click **Relevance**, then select **Rules** from the list. 
 
-17. Change the **Status** to **Approved** and the **Published** to **Yes**. Remember which one you published becuase you'll need it in the next steps.
+>Clicking **Rules** will open the **Rules Manager** in a new tab in your browser. <u>Keep this tab open</u>, as we will revisit it throughout the lab exercises.
 
-18. Return to the Fusion tab. Hover over the **QUERYING** icon in the sidebar, then click **Query Workbench**
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/navigation/nav_relevance.png" style="height: 300px; width:170px;"/>
 
-19. Change **View As** to **Results** 
+<br>
 
-20. Toggle off the **Text Tagger** stage by clicking on the green circle and execute a search for the misspelling rule you approved and published on the Query Rewrites page
+9. In the left navigation pane, click **Rewrite** to open the Rewrites Manager dashboard.
 
-21. Toggle back on the **Text Tagger** stage by clicking on the grey circle and observe the difference in the relevancy of results
+10. Click the **Head/Tail** tab, then locate **dsl router** in the list of rewrites.
 
-<img src="https://storage.googleapis.com/fusion-datasets/5.4_Markdown_images/03%20AI/Lab%203%20Misspelling.png" style="height: 200px; width:300px;"/>
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/airewrit/airewrit_dslrouter.png"/>
 
->Note: Notice the search enhancement when we use Query Rewrite principles by turning on the Text Tagger stage. This shows the search enhancement when we use Query Rewrite principles through the Text Tagger stage. Notice the updated search parameters Fusion is using to perform this search in the rawquerystring and querystring sections
+<br>
 
-22. Hover over the **COLLECTIONS** icon in the sidebar, then click **Jobs**. Click on and run ``relevancy-phrase-extraction``
+Take a minute to review the information in the **dsl router** row. We can see Fusion's suggested improvement (```router^2 dsl^3```) for the query. We can also observe that **Status** is set to **Auto** and that **Published** is set to **Yes**. This is because the Head/Tail suggestion falls into the auto publish category set by the head-tail relevancy job we ran earlier in the lab. 
 
-23. Return to the **Query Rewriting** browser tab 
+Let's go ahead and manually approve this suggestion, and see what happens.
 
-24. Click **Phrase** and find any entry in the list of rewrites
+11. In the **dsl router** row, click the dropdown arrow in the **Status** field and select **Approved** from the list.
 
-25. Change the **Status** to **Approved** and the **Published** to **Yes**. Remember which one you published because you'll need it in the next steps.
+>Notice that changing the status will automatically unpublish the rewrite. 
 
-26. Return to the Fusion tab. Hover over the **QUERYING** icon in the sidebar, then click **Query Workbench**
+12. To republish the **dsl router** rule, hover in its **Published** field and click the **green up arrow** option. Click **Publish** in the dialog to confirm the action. 
 
-27. Toggle off the **Text Tagger** stage by clicking on the green circle and execute a search for the entry you approved and published on the Query Rewrites page
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/airewrit/airewrit_dlsrouterchanges.png"/>
 
-28. Toggle back on the **Text Tagger** stage by click on the grey circle and observe the difference in the relevancy of results
+<br>
 
-<img src="https://storage.googleapis.com/fusion-datasets/5.4_Markdown_images/03%20AI/Lab%203%20Phrase%20Example.png" style="height: 200px; width:300px;"/>
+We have republished this rule, which will affect the query results the next time a user searches for **dsl router**. Let's go back to Fusion, execute our search, and see how the change affects the returned results.
 
->Note: Notice the search enhancement when we use Query Rewrite principles by turning on the Text Tagger stage. This shows the search enhancement when we use Query Rewrite principles through the Text Tagger stage. Notice the updated search parameters Fusion is using to perform this search in the rawquerystring and querystring sections
+13. Return to the Fusion tab and navigate back to the **Query Workbench** tab.
 
-29. Make sure to **Save** your open Fusion Workspace tabs!
+14. Click the green circle next to the **Text Tagger** stage to disable it. 
 
-________
-Great job! You now have functioning query rewrites! If you would like to save your Fusion App to reference later, you can do it now:
-1. Return to the Fusion Launcher
-2. Hover over your app and click on the cog that appears in the lower right corner
-3. Within the box that opens, click **Export app to zip**
+>The Text Tagger stage queries a handler to perform spell correction, phrase boosting, and synonym expansion actions. We want to first view our unfiltered restuls, therefore we are disabling this stage for the moment. 
 
-This concludes the Query Rewrites Relevancy Lab.
+15. In the lower right corner, locate the **View As** field. Click the dropdown arrow, then select **Debug** in the list.
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/airewrit/airewrit_texttagger.png"/>
+
+<br>
+
+16. In the search field, execute a query for ```dsl router```. 
+
+<br>
+
+On review of the search results, notice that Fusion is using the <b>rawquerystring</b> and <b>querystring</b> fields to perform this search. Disabling the Text Tagger stage prevents Fusion from applying the rewrite rule that we just published.
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/airewrit/airewrit_dslsearch.png"/>
+
+<br>
+
+17. Click the circle next to the **Text Tagger** stage to re-enable it. If the search results display does not automatically update, requery **dsl router** to see the changes to the relevancy of the returned results.
+
+You can see that re-enabling the **Text Tagger** stage has applied our published rule, and the **rawquerystring** and **querystring** fields now display the improved query suggestion to produce the new search results. 
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/airewrit/airewrit_dslimprovedsearch.png"/>
+
+<br>
+
+To see further evidence of how this works, take a moment and toggle the Text Tagger stage on and off. When you view the **explain** field for each option, you can see the change to the document score that occurs when the stage is enabled and the rule is applied. 
+
+## Misspelling Rewrites
+
+Now that we have reviewed head/tails adjustments, let's move on to another query rewrite function, Misspelling Detection.
+
+18. Navigate back to the **Jobs** tab, and repeat steps 3-5 to run the ```relevancy-spell-correction``` job.
+
+Once it has been successfully run, we want to navigate to the Rewrites Manager and view the job's results.
+
+19. Navigate back to the **Rewrites Manager** browser tab.
+
+20. Click the **Misspelling** tab, then locate the **lenevo** entry in the list of rewrites.
+
+Take a minute to review the information in the **lenevo** row. We can see Fusion's suggested improvement (```lenovo```) for the query. We can also observe that **Status** is set to **Pending** and that **Published** is set to **No**.  
+
+>Unlike the Head/tail job, our misspelling corrections require us to review and manually approve them.
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/airewrit/airewrit_lenovo.png"/>
+
+<br>
+
+Let's go ahead and manually approve this suggestion, and see what happens to our search results.
+
+21. In the **lenevo** row, click the dropdown arrow in the **Status** field and select **Approved** from the list.
+
+22. To publish the **lenevo** rule, hover in its **Published** field and click the **green up arrow** option. Click **Publish** in the dialog to confirm the action. 
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/airewrit/airewrit_lenovochanges.png"/>
+
+<br>
+
+We have republished this rule, which will affect the query results the next time a user searches for **lenevo**. Let's go back to Fusion, execute our search, and see what happens.
+
+23. Return to the Fusion tab and navigate back to the **Query Workbench** tab.
+
+24. Click the green circle next to the **Text Tagger** stage to disable it.
+
+25. In the **View As** field, click the dropdown arrow and select **Results** in the list.
+
+26. In the search field, execute a query for ```lenevo``` (the misspelled term).
+
+When we disable the Text Tagger stage and execute the search, notice that we do not return any results for the misspelled term (which is exactly what we would expect to happen).
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/airewrit/airewrit_lenovosearch.png"/>
+
+<br>
+
+27. Click the circle next to the **Text Tagger** stage to re-enable it. If the search results display does not automatically update, requery **lenevo** to see the changes to the relevancy of the returned results.
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/airewrit/airewrit_lenovoimprovedsearch.png"/>
+
+<br>
+
+Once again, notice how even though we searched for the misspelled term, the search is enhanced (and the misspelling rule is applied) when we enable the Text Tagger stage, and we return the results we are looking for.
+
+To see this in further detail, you can change the **View As** field to **Debug** and explore the stage. Notice the **rawquerystring** and **querystring** fields display the improved query suggestion, which now produces search results. 
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/airewrit/airewrit_lenovoimprovedsearch2.png"/>
+
+<br>
+
+## Phrase Detection Rewrites
+
+For our last exercise, let's practice using the Phrase Detection rewrite strategy.
+
+28. Navigate back to the **Jobs** tab, and repeat steps 3-5 to run the `relevancy-phrase-extraction` job.
+
+Once it has been successfully run, we want to navigate to the Rewrites Manager and view the job's results.
+
+29. Navigate back to the **Rewrites Manager** browser tab. 
+
+30. Click the **Phrase** tab, then locate the `dell inspiron` entry in the list of rewrites.
+
+Take a minute to review the information in the **dell inspiron** row. We can see Fusion's suggestion that (`dell inspiron`) is a phrase frequently entered by users. We can also observe that **Status** is set to **Pending** and that **Published** is set to **No**.  
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/airewrit/airewrit_dell.png"/>
+
+<br>
+
+One more time, let's go ahead and manually approve this suggestion, and see how it affects our search results.
+
+31. In the **dell insipiron** row, click the dropdown arrow in the **Status** field and select **Approved** from the list.
+
+32. To publish the **dell inspiron** rule, hover in its **Published** field and click the **green up arrow** option. Click **Publish** in the dialog to confirm the action. 
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/airewrit/airewrit_dellchanges.png"/>
+
+<br>
+
+We have republished this rule, which will affect the query results the next time a user searches for **dell inspiron**. Let's go back to Fusion, execute our search, and see what happens.
+
+33. Return to the Fusion tab and navigate back to the **Query Workbench** tab.
+
+34. Click the green circle next to the **Text Tagger** stage to disable it.
+
+35. In the search field, execute a query for ```dell inspiron``` (our phrase).
+
+When we disable the Text Tagger stage and execute the search, notice that we see **dell inspiron** products at the top of our search results. 
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/airewrit/airewrit_dellsearch.png"/>
+
+<br>
+
+Before we re-enable the Text Tagger stage, let's observe what is happening behind the scenes.
+
+36. In the **View As** field, click the dropdown arrow and select **Debug** in the list.
+
+At first glance, the **rawquerystring** and **querystring** fields display our search term, as expected. When we take a closer look at the **parsedquery** field, we can see that the search looked for each term separately, instead of treating them as a phrase (which is what we want to happen).
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/airewrit/airewrit_dellsearch2.png"/>
+
+<br>
+
+37. Click the circle next to the **Text Tagger** stage to re-enable it. If the search results display does not automatically update, requery **dell inspiron** to see the changes to the relevancy of the returned results.
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/airewrit/airewrit_dellimprovedsearch.png"/>
+
+<br>
+
+If you were to click the **View As** field, select the **Results** option and view the results, you would most likely see that the top documents returned did not change. However if you look closely at the **parsedquery** field when the Text Tagger stage is applied, you can see that the improved search query is now treating **dell insipron** as a phrase, which in turn gives the affected documents a higher score, which will improve the overall search ressults returned for the user.
+
+Feel free to continue practicing with the rewriting strategies covered in this lab, approving and publishing the rule, then using Query Workbench to validate your relevancy changes.
+
+---
+<br>
+
+## Great job! You have successfully completed the Query Analytics Lab, where you have practiced creating functioning query rewrites.
+
+<br>
+
+>Make sure to **Save** your open Fusion workspace tabs before exiting the application.
+
+<br>
+
+If you would like to save your Fusion app to import and practice with later, you can do it now:
+1. In the left navigation panel, click **Apps**, then choose **Return to Launcher** from the list.
+2. Hover over your app until a cog appears in the lower right corner.
+3. Click the cog icon.
+4. In the pop-up window, click **Export app to zip**.
+
+---
+<br>
+
+## Hope to see you in our next course! 
+## Thanks and happy learning!

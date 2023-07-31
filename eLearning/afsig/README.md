@@ -6,129 +6,184 @@ permalink: /afsig/
 
 <link rel="stylesheet" href="/lib/public/global-training.css">
 
-## The environment should begin to load immediately. Please do not click *Start Lab* again. It may take a few minutes for the Fusion environment to fully display.
+## It may take a few minutes to fully load and display the Fusion environment. Please do not click *Start lab* again. 
+<br>
 
-When the Fusion Login page displays, login:
-
-* USERNAME: ```admin```
-* PASSWORD: ```password123```
-
-# In this lab you will learn how to use aggregated signals, how to apply and analyze signal boosting. Let's get started!
-
-> Note: You may need to adjust the size of the instructions panel to fully view results in the UI. Toggle the window sizes as needed.
-
-#  Inspect Aggregated Signals
-
-1. In the Fusion Admin UI, click **Electronics** to access the app
-
-2. Navigate to **Collections Manager**
-
-3. Change collection: **Electronics_signals_aggr**
-
-4. In the App tool menu, gover over QUERYING and click **Query Workbench**
-
-> Notice that no result turn up and you see an API Error. That is because the Apply Rules stage is interfering with the data.
-
-5. Click on the green circle to turn the <u>Apply Rules</u> stage **off**
-
-  <img src="https://storage.googleapis.com/fusion-datasets/5.4_Markdown_images/02%20AF/Boosting%20With%20Signals_5/Boosting_with_Signals1.png" style="height: 355px; width:450px;"/>
+>When the Fusion Login page displays, login:
+>* USERNAME: ```admin```
+>* PASSWORD: ```password123```
 
 <br>
 
->You will see the error still, but we now have results. This will work for the purposes of this lab. In production, you would want to set up a custom pipeline before ingestion.
+## Welcome to the Fusion Signals Lab! <br> Through this set of lab activities you will learn how to use aggregated signals, how to apply and analyze signal boosting. 
 
-6. Click Show Fields on any document
+---
+<br>
 
-   * The fields <u>doc_id_s</u> and query_s record the original query entered by the user(s), along with which document they ultimately clicked (query_s shows when given specific query)
+For this lab, we will be using the **Electronics** app that has already been created in Fusion.
 
-    * <u>aggr_count_i</u> records how many times this specific query (“fax machine”) led to a click on this document (1)
-
-    * <u>weight_d</u> indicates how much to promote this document in response to this query
-
-7.  Execute a query for: ``doc_id_s: 2842056``
-
-8. Click: **Add a field facet** 
-
-9. Choose: **query_s**
-
-   * This query and facet show all of the user queries that led to a click on this document
-
-   * We would need to examine individual documents to see the click-count and weight for each case.
-
-
-<img src="https://storage.googleapis.com/fusion-datasets/5.4_Markdown_images/02%20AF/Boosting%20With%20Signals_5/Boosting_with_Signals2.png" style="height: 225px; width:440px;"/>
+1. On the Fusion launch page, click the **Electronics** app to open it and enter the Fusion workspace.
 
 <br>
 
-10. Navigate to **Collections Manager**
+##  Inspect Aggregated Signals
 
-11. Change collection: **Electronics**
+Before we get started configuring the app for the lab exercises, let's take a minute to investigate the aggregated signals that are available for our data.
 
-> **Note:** You may leave without saving 
+2. In the left navigation pane, click **Collections**, then select **Collections Manager** from the list.
 
-12. In the App tool menu, select: **QUERYING > Query Workbench**
-
-# Applying Signal Boosting
-
-13. Execute query for:  ``ipad``
-
-    * Review the results
-
-
-<img src="https://storage.googleapis.com/fusion-datasets/5.4_Markdown_images/02%20AF/Boosting%20With%20Signals_5/Boosting_with_Signals3.png" style="height: 275px; width:450px;"/>
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/navigation/nav_collections.png" style="height: 300px; width:185px;"/>
 
 <br>
 
-14. Click on the circle to turn the <u>Boost with Signals</u> stage **off**
+3. Click to expand and view the **Your Collections** list and select **Electronics_signals_aggr** from the list.
 
-    * Review the results. These results are terrible. There may not even be any ipads in the results
-
-# Analyzing Signal Boosting
-
-15. In Query Workbench, change View As: to **Debug**
-
-16. Observe the **explain** section
-
-This section provides a full description of how the relevancy score for each results document was calculated.  At present, with signal boosting disabled, this is based solely on TF*IDF
-
-<img src="https://storage.googleapis.com/fusion-datasets/5.4_Markdown_images/02%20AF/Boosting%20With%20Signals_5/Boosting_with_Signals5.png" style="height: 349px; width:625px;"/>
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/afsig/afsig_collectionslist.png"/>
 
 <br>
 
-17. **Re-enable** Boost with Signals stage (click to add green circle)
+Notice the collection in the the top corner has been changed and now indicates that we will be looking at results related to the **Electronics_signals_aggro** collection.
 
-18. Observe debug output
-
-    * First, notice that parsedquery became MUCH more complex due to the added boosting.
-
-    * The doc ids you see in the boosted query were generated by first executing the same user query (“ipad”) on the Labs_signals_aggr collection, and collecting the top-weighted results
-
-    * Second, notice that the relevance explain became more complex as well.  Now there is a Signal Boosting factor in addition to the TF*IDF factors.
-
-    * In the example below, the final score for this document (20.69) was produced by similarly-scaled factors for TF*IDF (6.77) and Signals (3.05).  One did not overpower the other—a very good thing!
-
-<img src="https://storage.googleapis.com/fusion-datasets/5.4_Markdown_images/02%20AF/Boosting%20With%20Signals_5/Boosting_with_Signals4.png" style="height: 184px; width:512px;"/>
+4. In the left navigation pane, click **Querying**, then select **Query Workbench** from the list.
 
 <br>
 
+You will notice that, instead of seeing results returned in the Query Workbench window, we can see an API error displayed. This is due to the fact that the Apply Rules stage is interfering with the search results.
 
-19. Click to open **Boost with Signals** pipeline stage
+5. Click the green circle next to the Apply Rules stage to disable it.
 
-20. Scroll down until you see **Solr Query Parameters**
+<br>
 
-The Solr Query Parameters govern how Fusion should locate and prioritize the signals related to a given query, as well as how the Signals-score should be combined with the standard TF*IDF score
+In the bottom right corner, you will see that we are still getting the API error warning, but we now have results displayed. 
 
-When implementing Signal Boosting in a Fusion App, all of these parameters can and should be tuned to suit your specific use cases.
+><b>Note:</b> This will work for the purposes of this lab. In a production environment, you would want to avoid this error by setting up a custom pipeline before ingesting your data.
 
-  <img src="https://storage.googleapis.com/fusion-datasets/5.4_Markdown_images/02%20AF/Boosting%20With%20Signals_5/Boosting_with_Signals6.png" style="height: 480px; width:380px;"/>
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/afsig/afsig_applyrules.png"/>
+
+<br>
+
+6. In the Query Workbench window, click **Show Fields** to display the field details for the first document. 
+
+<br>
+
+Let’s look at a couple of things:
+* The **doc_id_s** and **query_s** fields record the original query entered by a user, along with which document they ultimately clicked (**query_s** will display a value when it given a specific query).
+* The **aggr_count_i** field records how many times a specific query led to a click on this document.
+* The **weight_d** field indicates how much to promote this document in response to a specific query.
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/afsig/afsig_fields.png"/>
+
+<br>
+
+To better understand how these fields will be returned, let's execute a query and add a field facet to isolate the results.
+
+7. In the search field, execute a query for ```doc_id_s: 2842056```.
+
+8. In the Query Workbench window, click **Add a field facet**. 
+
+9. Begin typing ```query```, then select **query_s** in the autosuggestion list.
+
+10. Click **Show Fields** to display the field details for the first document. 
+
+<br>
+
+Notice that now our fields display with results based on the query we ran, and show values for all of the user queries that led to a click on this document. Feel free to examine the other returned documents to see the click-count and weight for each case.
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/afsig/afsig_fieldsafterquery.png"/>
+
+<br>
+
+11. Click **Save** to save your changes to the Query Workbench, then click **Yes, save over the existing pipeline** to confirm the action.
+
+<br>
+
+## Applying signal boosting
+
+For our next exercise, we are going to practice using signal boosting on our results.
+
+12. Navigate to the **Collections Manager** tab, click to expand and view the **Your Collections** list and select **Electronics** from the list.
+
+13. Navigate back to the **Query Workbench** tab.
+
+14. Enter a query for ```ipad```.
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/afsig/afsig_ipadsearch.png"/>
+
+<br>
+
+Before moving forward, take a minute to review the search results, taking notice of the scores for each search result.
+
+15. Click the green circle next to the **Boost with Signals** stage to disable it.
+
+<br>
+
+Take another minute to review the updated results. While the number of returned results did not change, the relevance is terrible (we don't even have an ipad returned at the top of the results). 
+
+Let's investigate a bit further.
+
+16. In the lower right corner, locate the **View As** field. Click the dropdown arrow, then select **Debug** in the list. 
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/afsig/afsig_debug.png"/>
+
+<br>
+
+The **explain** section provides a full description of how the relevancy score for each document in the results set was calculated.  At present, with signal boosting disabled, this is based solely on **TF*IDF**.
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/afsig/afsig_debugresults.png"/>
+
+<br>
+
+17. Click the circle next to the **Boost with Signals** stage to re-enable it.
+
+<br>
+
+Once more, let's observe the debugged results:
+* Notice that **parsedquery** became MUCH more complex due to the added boosting.
+* In addition, the relevance **explain** section has became more complex as well, as we are now employing a Signal Boosting factor in addition to the TF*IDF factors.
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/afsig/afsig_debugresults2.png"/>
+
+<br>
+
+If we switch back to viewing the results (**View As > Results**), we will see that the document ids displayed in the boosted query were generated by first executing the same user query (```ipad```) on the **Labs_signals_aggr** collection, and collecting the top-weighted results.
+
+<br>
+
+## Reviewing Parameters
+
+Finally, let's take a moment to explore the details of the **Boost with Signals** stage.
+
+19. Click **Boost with Signals** to open the pipeline stage's configuration window.
+
+20. Scroll down until you locate the **Solr Query Parameters** section.
+
+<br>
+
+The **Solr Query Parameters** govern how Fusion should locate and prioritize the signals related to a given query, as well as how the signals-score should be combined with the standard TF*IDF score when calculating the relevance of the search result as compared to the query.
+
+>Keep in mind, all of these parameters can (and should be) tuned to suit your specific use cases when implementing Signal Boosting in a Fusion app.
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/afsig/afsig_queryparams.png"/>
   
- <br>
+---
+<br>
 
-_____
+## Great job! You have successfully completed the Fusion Signals Lab, where you have learned how to use aggregated signals, and how to apply and analyze signal boosting. 
 
-## Congratulations! You should now know to use aggregated signals, and how to apply and analyze signal boosting. If you would like to save your Fusion App to reference later, you can do it now:
+<br>
 
-1. Return to the Fusion Launcher
-2. Hover over your app and click on the cog that appears in the lower right corner
-3. Within the box that opens, click **Export app to zip**
+>Make sure to **Save** your open Fusion workspace tabs before exiting the application.
 
+<br>
+
+If you would like to save your Fusion app to import and practice with later, you can do it now:
+1. In the left navigation panel, click **Apps**, then choose **Return to Launcher** from the list.
+2. Hover over your app until a cog appears in the lower right corner.
+3. Click the cog icon.
+4. In the pop-up window, click **Export app to zip**.
+  
+---
+<br>
+
+## Hope to see you in our next course! 
+## Thanks and happy learning!

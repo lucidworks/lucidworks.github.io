@@ -6,54 +6,85 @@ permalink: /pmrules/
 
 <link href="lib/public/global-training.css" rel="stylesheet"></link>
 
-## The environment should begin to load immediately as indicated by the Vocareum loading symbol. Please do not click *Start Lab* again. It may take a few mintues for the Fusion environment to fully display.
+# It may take a few minutes to fully load and display the Fusion environment. Please do not click *Start lab* again. 
+<br>
 
-1. When the Fusion Login page displays, login:
-    * USERNAME: **admin**
-    * PASSWORD: **password123**
+>When the Fusion Login page displays, login:
+>* USERNAME: ```admin```
+>* PASSWORD: ```password123```
 
-## Using real world scenarios, you will create and manage Rules from the Rules Manager.
+<br>
 
-You will practice solving everyday problems including: 
-- Creating a rule using the Rules Manager. This rule will be broken into three steps, detailing what each column on the Add Rule page represents. 
-- Publishing the rule
+## Welcome to the Predictive Merchandiser Rules Lab! <br> Through this set of lab activities, you will practice creating and managing rules using Predictive Merchandiser.
 
+---
+<br>
 
-If you get stuck, we have provided helpful details to keep you moving. 
+In this lab, you will be following a real scenario to:
+* Create a rule (broken down into three steps, which will focus on the columns and the information they contain).
+* Publish a rule.
 
+<br>
+
+Different from our other labs, we encourage you to try the exercise first, then check to see how you did. If you get stuck, we have provided the following to keep you moving:
 * **Hints** provide helpful clues regarding the appropriate task to perform.
-
 * **Solution Steps** walk you through step by step instructions, detailing how to complete the task. 
 
-## Rules Dashboard
+---
+<br>
 
-2. Select the app **Electronics**. 
+## Rules Manager Dashboard
 
+For this lab, we will be selecting the **Electronics** app that has already been configured for our lab environment. We are going to start by opening the app in Fusion, then navigating to the **Rules Manager** dashboard.
 
-3. Let's begin creating a new rule. The holiday season is approaching and you need to visit your Rules Dashboard in order to **add a rule for the annual seasonal sale**. Every year, your company pins the most popular items based on trends from top influencers on social media. Let’s get started! What do you click to begin?
+1. On the Fusion launch page, click the **Electronics** app to open it and enter the Fusion workspace. 
+
+2. In the left navigation pane, click **Relevance**, then select **Rules** from the list.
+
+>Clicking **Rules** will open the **Rules Manager** in a new tab in your browser. 
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/navigation/nav_relevance.png" style="height: 300px; width:170px;"/>
+
+<br>
+
+## Creating Rules
+
+Our first exercise will be creating a new rule using the following scenario:
+
+The holiday season is approaching and you need to visit your Rules Manager Dashboard in order to **add a rule for the annual seasonal sale**. Every year, your company pins the most popular items based on trends from top influencers on social media. 
+
+What do you click to begin?
 
 <details>
 
 <summary>Solution Steps</summary> 
 
-1.  Click **+Add** in the upper right corner of the Rules Manager
-> Note that you may need to adjust the size of your window in order to see all elements of the Rules dashboard.
+3. In the Rules Manager window, click **Add** to add a new rule.
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/pmrules/pmrules_addrule.png"/>
+
 </details>
 <br>
 
-## General Information
+## Rule General Information
 
-4. Let's break this rule down and start with the General column first. Per the company standard, **the rule is always called *Product Group* - Annual Holiday Sale**.  Based on recommendations from the top influencers on social media, the product group just so happens to be **Wireless Headphones**. 
+Now that we have the rule shell started, let's break it down and start with the General column first. 
 
-    Additionally, **you’ll want to add the description *Surplus wireless headphones Winter Holiday Sale Nov. - Dec. Four products pinned*** to differentiate the rule from others so that you can easily identify what the rule depicts without clicking into it. Company policy does not require you to fill out any additional fields in the General column of the New Rule page. How can you fill out the general rule information using these details?
+Per the company standard, **the rule is always called *Product Group* - Annual Holiday Sale**.  Based on recommendations from the top influencers on social media, the product group just so happens to be **Wireless Headphones**. 
+
+Additionally, **you’ll want to add the description *Surplus wireless headphones Winter Holiday Sale Nov. - Dec. Four products pinned*** to differentiate the rule from others so that you can easily identify what the rule depicts without clicking into it. 
+
+Company policy does not require you to fill out any additional information in the General column. 
+
+How would you fill out the general rule information using these details?
 
 <details>
 
 <summary>Hint</summary> 
 
-- Name the rule *Wireless Headphones - Annual Holiday Sale*  
+* Name the rule *Wireless Headphones - Annual Holiday Sale*.  
 
-- Enter the rule description of *Surplus wireless headphones Winter Holiday Sale Nov. - Dec. Four products pinned*
+* Enter the rule description of *Surplus wireless headphones Winter Holiday Sale Nov. - Dec. Four products pinned*.
 
 </details>
 
@@ -61,28 +92,35 @@ If you get stuck, we have provided helpful details to keep you moving.
 
 <summary>Solution Steps</summary> 
 
-1. Enter the rule name `Wireless Headphones - Annual Holiday Sale` in the open text box  
+4. In the General section, enter the following values:
+* In the **Name** field, enter ```Wireless Headphones - Annual Holiday Sale```. 
+* In the **Description** field, enter ```Surplus wireless headphones Winter Holiday Sale Nov. - Dec. Four products pinned```.
+* Leave the remaining fields blank.
 
-2. Enter the description `Surplus wireless headphones Winter Holiday Sale Nov. - Dec. Four products pinned` in the open text box  
-
-3. Disregard the remainder fields in the general column
-
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/pmrules/pmrules_general.png"/>
 
 </details>
 <br>
 
-## Conditions
-5. Next, let's look at the Condition column for this rule. In order for this sale to be successful, you know that **whenever a customer searches the keyword Headphones**, that specific products should be pinned to the first four spaces on the Merchandiser Dashboard. Additionally, **this sale runs from November 1st through December 24th** of this year. How can you fill out the rule conditions using this information? 
+## Rule Conditions
+
+Next, let's look at the Condition column for this rule. 
+
+In order for this sale to be successful, you know that **whenever a customer searches the keyword Headphones**, specific products should be pinned to the first four spaces on the Merchandiser Dashboard. 
+
+Additionally, **this sale runs from November 1st through December 24th** of this year. 
+
+How would you fill out the rule conditions using this information? 
 
 <details>
 
 <summary>Hint</summary> 
 
-- Condition Types should be set to Query AND Dates  
+* Condition Types should be set to Query AND Dates.  
 
-- Match Query Using should be set to Keywords and Search terms should be set to headphones  
+* Match Query Using should be set to Keywords, and Search terms should be set to headphones.  
 
-- Dates should reflect Nov. 1 - Dec. 24
+* Dates should reflect Nov. 1 - Dec. 24.
 
 </details>
 
@@ -90,39 +128,46 @@ If you get stuck, we have provided helpful details to keep you moving.
 
 <summary>Solution Steps</summary> 
 
-1. Use the **drop down** under CONDITION TYPES and check **`Query`** and **`Date`**  
+5. In the **Condition Types** field, click the dropdown arrow and select both the ```Query``` and ```Date``` options.  
 
-2. If it is not already set, use the dropdown for Match Query and select **`Keyword`**  
+6. Click in the **Dates** field and select the following values:
+* For the beginning date, select ```November 1``` of this year, and the starting time of ```12:00```.
+* For the ending date, select ```December 24```  of this year, and the starting time of ```12:00```.
 
-3. In the open text box under Search Terms, enter Headphones and click **enter/return** on your keyboard  
+7. In the **Match Query Using** field, click the dropdown arrow and select the ```Keywords``` option (if it is not already selected).  
 
-4. Click the **Dates** text box  
+8. In the **Search Terms** field, enter ```Headphones```, then click outside of the field box to add the term.
 
-5. Select **`November 1st`** of this year as the starting date and **`December 24th`** as the ending date
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/pmrules/pmrules_condition.png"/>
 
 </details>
 <br>
 
 ## Rule Actions
-6. Last, let's visit the Action column. In the Action column, you know that **specifc products will be pinned based on their product IDs**. You have your product IDs ready to pin in the following positions: 
-    1. First - 3857133
-    2. Second - 3730573
-    3. Third - 5414492
-    4. Fourth - 4564402  
-How can you use these product IDs to fill out the Action column?
 
+Last, let's visit the Action column. 
+
+In the Action column, you know that **specifc products will be pinned based on their product IDs**. 
+
+You have your product IDs ready to pin in the following positions: <br>
+1. First - 3857133<br>
+2. Second - 3730573<br>
+3. Third - 5414492<br>
+4. Fourth - 4564402
+
+How would you use this information to fill out the Action column?
 
 <details>
 
 <summary>Hint</summary> 
 
-- Action should be set to Pinned  
+* Action should be set to Pinned.  
 
-- Field Name should be set to id  
+* Field Name should be set to id.  
 
-- Pinned documents should list the above ID numbers in the order listed  
+* Pinned documents should list the above ID numbers in the order listed.  
 
-- Positions for each producd ID should correspond to the number they are listed with above
+* Positions for each product ID should correspond to the number they are listed with above.
 
 </details>
 
@@ -130,39 +175,40 @@ How can you use these product IDs to fill out the Action column?
 
 <summary>Solution Steps</summary> 
 
-1. In the ACTION TYPE drop down list, select **Pinned**  
+9. In the **Action Type** field, click the dropdown arrow and select **Pinned** from the list.  
 
-2. Ignore SET RESPONSE VALUES  
+10. Leave the **Set Response Values** field empty.  
 
-3. If it’s not already displayed, type out `id` in FIELD NAME  
+11. In the **Field Name** field, enter ```id``` (if it is not already entered).  
 
-4. Click the **+ADD** button next to PINNED DOCUMENTS to add **four** empty fields  
+12. In the Pinned Documents section, click **+ADD** four times to generate four **Value** fields.  
 
-5. Copy and paste each id number listed above into their own respective value box. Type out the respective positions for each value so the list reads:   
-
-    - *`3857133`* position *`1`*
-
-    - *`3730573`* position *`2`*
-
-    - *`5414492`* position *`3`*
-
-    - *`4564402`* position *`4`*
+13. For each of the **Value** fields, enter each value and position number as listed:
+* ```3857133```, with position ```1```
+* ```3730573```, with position ```2```
+* ```5414492```, with position ```3```
+* ```4564402```, with position ```4```
     
-6. Click **Save** in the upper right corner to save the rule
+14. Click **Save** to create the new rule.
 
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/pmrules/pmrules_action.png"/>
 
 </details>
 <br>
 
 ## Publishing
 
-7. You want this rule to automatically display come November 1st and have approval from your department to make this happen. In order for the rule to take effect once the condition criteria are both met, **you'll need to publish the rule**. How can you do that?
+You want this rule to automatically display starting  November 1st, and already have approval from your department to make this happen. 
+
+In order for the rule to take effect once the condition criteria are both met, **you'll need to publish the rule**. 
+
+How can you do that?
 
 <details>
 
 <summary>Hint</summary> 
 
-- Publish the new rule you have created
+* Publish the new rule you have created.
 
 </details>
 
@@ -170,18 +216,26 @@ How can you use these product IDs to fill out the Action column?
 
 <summary>Solution Steps</summary> 
 
-1. Hover your mouse over the rule  
+15. Hover your mouse over the **Published** column for the new rule.  
 
-2. Click the **Publish Individual Rule** button  
+16. Click **Publish Individual Rule**.  
 
-3. Click **Publish** to confirm  
+17. In the Publish dialog, click **Publish** to confirm the action.  
 
 Your page will refresh to indicate the rule has been published. 
 
-</details>
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/pmrules/pmrules_publish.png"/>
 
+</details>
 <br>
 
-____
+---
+<br>
 
->Congratulations! You have completed the walkthrough of Exploring the Rules Manager. Click 'Next' in the lower right corner to continue through the course.
+## Great job! You have successfully completed the Predictive Merchandiser Rules Lab, where you have learned how to manually create and manage business rules using Predictive Manager.
+
+---
+<br>
+
+## Hope to see you in our next course!
+## Thanks and happy learning!

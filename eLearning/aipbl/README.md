@@ -6,57 +6,107 @@ permalink: /aipbl/
 
 <link rel="stylesheet" href="/lib/public/global-training.css">
 
-# Start your environment by clicking **Start Lab** above. 
+# It may take a few minutes to fully load and display the Fusion environment. Please do not click *Start lab* again. 
+<br>
 
-## The environment should begin to load immediately. Please do not click *Start Lab* again. It may take a few minutes for the Fusion environment to fully display.
-
-When the Fusion Login page displays, login:
-* USERNAME: ```admin```
-* PASSWORD: ```password123```
-
-## In this lab  you will ingest and transform data with the Parallel Bulk Loader (PBL), prepare data with spark shell, and verify successful data load! Let's get started by creating a Fusion App.
-
-1. Click on **Create new app**, name it **Labs** and click **Create App**
-   
-2. Click on your newly created app to enter the *Fusion workspace*, this is where you can use the PBL jobs to populate data and signals in the collections
-
-# Ingest and Transform your Data
-
-3. Hover over the **COLLECTIONS** icon in the sidebar, then click **Jobs**
-   
-4. Click **Add+**, from the drop-down menu, select **Parallel Bulk Loader**
-
-5. Toggle on **Advanced**. Let's add some parameters to ingest the data:
-    * Update the **Spark Job ID** to ``BestBuy_catalog``
-    * Update the **Format** to ``parquet``
-    * Update the **Path** to ``gs://training-ecommerce/catalog``
-    * Change the **Output Collection** to ``Labs``
-    * Copy the **Transform Scala** below and paste it into the **Transform Scala** text box
-
-<pre><code>
-def transform(inputDF: Dataset[Row]) : Dataset[Row] = {
-inputDF.filter("department IN ('ACCESSORIES', 'APPLIANCE', 'COMPUTERS')")
-}
-</pre></code>
+>When the Fusion Login page displays, login:
+>* USERNAME: ```admin```
+>* PASSWORD: ```password123```
 
 <br>
 
-6. Close the **Transform Scala** text box. Click **Save**, then click **Run**, then click **Start**
+## Welcome to the Intro to Machine Learning Lab! <br> Through this set of lab activities, you will ingest and transform data with the Parallel Bulk Loader (PBL), prepare data with Spark shell, and verify your successful data load.
 
->Note: Success! The job will take up to three minutes, when it's done, the "running" icon will change to a "sunshine". 
+---
+<br>
 
-7. Click **Save**
+Let's get started by creating a new app in Fusion. 
 
-8. Let's add another PBL job. Click **Add+**, from the dropdown menu, click **Parallel Bulk Loader**
+1. From the Fusion launch page, click **Create new app**. 
 
-9. Click **Advanced**. Let's add some parameters to ingest the data:
-    * Update the **Spark Job ID** to ``BestBuy_signals_labs``
-    * Update the **Format** to ``parquet``
-    * Update the **Path** to ``gs://training-ecommerce/signals``
-    * Change the **Output Collection** to ``Labs_signals``
-    * Copy the **Transform Scala** below
+2. In the **App Name** field, enter the name ```Labs```. 
 
-<pre><code>
+3. *(Optional)* Enter an **App Description** and select an **App tile color**.
+
+4. Click **Create App**.
+   
+5. Once it has been created, click the **Labs** app to open it and enter the Fusion workspace. 
+
+<br>
+
+## Ingest and Transform your Data
+
+For this lab exercise, we will be using PBL jobs to populate data and signals in the collections. 
+
+6. In the left navigation pane, click **Collections**, then select **Jobs** from the list.
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/navigation/nav_collections.png" style="height: 350px; width:200px;"/>
+
+<br>
+   
+7. In the Jobs pane, click **Add+** and begin typing ```parallel```, then select **Parallel Bulk Loader** from the autosuggestion list.
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/aipbl/aipbl_addPBLjob.png"/>
+
+<br>
+
+8. In the job configuration window, enter the following values:
+* In the **Spark Job ID** field, enter ```BestBuy_catalog```.
+* In the **Format** field, enter ```parquet```.
+* In the **Path** field, enter ```gs://training-ecommerce/catalog```.
+* Click the **Output Collection** field and select ```Labs```.
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/aipbl/aipbl_BBcat_jobsettings.png"/>
+
+<br>
+
+9. Click to enable the **Advanced** fields.
+
+10. Scroll down to the Write Options section, then copy and paste the follow value into the **Transform Scala** field:
+
+```
+def transform(inputDF: Dataset[Row]) : Dataset[Row] = {
+inputDF.filter("department IN ('ACCESSORIES', 'APPLIANCE', 'COMPUTERS')")
+}
+```
+
+11. Click **Save** to create the new job. 
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/aipbl/aipbl_BBcat_transform.png"/>
+
+<br>
+
+Now we need to run the job in order to ingest the data into Fusion.
+
+12. Click **Run**, then click **Start** in the job dialog to start the job.
+
+>The job will take a couple minutes to run. Note that the **Running** indicator displays while the job is in process, and will change to **Success** when the job is complete.
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/aipbl/aipbl_BBcat_runjob.png"/>
+
+13. Once the job is complete, click **X** to close the job dialog.
+
+<br>
+
+We need to add one more PBL job, this time to ingest our signals data.
+
+14. In the Jobs pane, click **Add+** and begin typing ```parallel```, then select **Parallel Bulk Loader** from the autosuggestion list.
+
+15. In the job configuration window, enter the following values:
+* In the **Spark Job ID** field, enter ```BestBuy_signals_labs```.
+* In the **Format** field, enter ```parquet```.
+* In the **Path** field, enter ```gs://training-ecommerce/signals```.
+* Click the **Output Collection** field and select ```Labs_signals```.
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/aipbl/aipbl_BBsig_jobsettings.png"/>
+
+<br>
+
+16. Click to enable the **Advanced** fields.
+
+17. Scroll down to the Write Options section, then copy and paste the follow value into the **Transform Scala** field:
+
+```
 import java.sql.Timestamp
 def transform(allClicks: Dataset[Row]) : Dataset[Row] = {
 val ecommerceFullCatalog = spark.read.parquet("gs://training-ecommerce/catalog")
@@ -76,52 +126,86 @@ val newDF = usefulClicks
 .withColumn("timestamp_tdt", addTime($"orig_timestamp_tdt", lit(diff)))
 newDF
 }
-</pre></code>
+```
+        
+18. Click **Save** to create the new job. 
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/aipbl/aipbl_BBsig_transform.png"/>
 
 <br>
-        
-10. Close the **Transform Scala** text box. Click **Save**, then click **Run**, then click **Start**
 
->Note: Success! The job will take about up to three minutes, when it's done, the "running" icon will change to a "sunshine". If your job fails, be sure to check your parameters with the configurations above and run the job again. 
+19. Click **Run**, then click **Start** in the job dialog to start the job.
 
-# Verify Successful Data Load
+>Once again, the job will take a couple minutes to run. If your job fails, be sure to check your parameters with the configurations above and run the job again. 
 
-11. Hover over **QUERYING**, click on **Query Workbench**
+20. Once the job is complete, click **X** to close the job dialog.
+
+<br>
+
+## Verify Successful Data Load
+Now that we have ingested all of our data, we want to verify that it was loaded correctly. 
+
+Let's start by updating the display fields and adding facets for both the **Labs** and **Labs_signals** collections.
+
+21. In the left navigation pane, click **Querying**, then select **Query Workbench** from the list. 
    
-12.  Click **Display Fields** in the upper right corner and change the following fields:
-* **Name** field to ``name`` 
-* **Description** field to ``longDescription``
+22. Click **Display Fields**, and change the following values:
+* In the **Name** field, enter ```name```. 
+* In the **Description** field, enter ```longDescription```.
 
-<img src="https://storage.googleapis.com/fusion-datasets/5.4_Markdown_images/03%20AI/Lab%201%20Display%20Fields.png" style="height: 250px; width:320px;"/>
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/aipbl/aipbl_displaynames.png"/>
 
-13. Click **Add a field facet** and choose **department**
+<br>
 
-14. Click **Save**
+23. Click **Display Fields** again to close the dropdown.
 
->Note: If prompted, save over the existing Labs pipeline. 
+24. Click **Add a field facet**, begin typing ```department``` then select **department** in the autosuggestion list.
 
-15. Click the **Collections** dropdown and select **Labs_signals**
+25. Click **Save** to save your changes to the Query Workbench, then click **Yes, save over the existing pipeline** to confirm the action.
 
-<img src="https://storage.googleapis.com/fusion-datasets/5.4_Markdown_images/03%20AI/Lab%201%20Collections.png" style="height: 250px; width:32
-0px;"/>
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/aipbl/aipbl_addfacets.png"/>
 
+<br>
 
-16. Hover over **QUERYING**, click on **Query Workbench**
+Next, we will switch collections and make the same changes.
+
+26. In the top left corner, click the Collections dropdown, then select the **Labs_signals** collection.
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/navigation/nav_collectiondropdown.png" style="height: 320px; width: 225px;"/>
+
+27. In the left navigation pane, click **Querying**, then select **Query Workbench** from the list. 
    
-17.  Click **Display Fields** and change the **Name** field to ``name``
+28. Click **Display Fields**, and change the following parameters:
+* In the **Name** field, enter ```name```. 
+* In the **Description** field, enter ```longDescription```.
 
-18. If there are no facets, click **Add a field facet** and choose **department**
+29. Click **Display Fields** again to close the dropdown.
 
-19. Click **Save**. Confirm that you will save over the existing pipeline.
+30. Click **Add a field facet**, begin typing ```department```, then select **department** in the autosuggestion list.
 
->Note: Note that these signals contain all the data from the associated catalog item.  This is NOT a recommended design for production, as the signals index would be very large.  However, this can be very useful for our examples, as the click data is easier for us to read and comprehend.
+31. Click **Save** to save your Query Workbench changes, then click **Yes, save over the existing pipeline** to confirm the action.
 
-20. Make sure to scroll through all of your open Fusion tabs and **Save** each!
+><b>Note:</b> These signals contain all the data from the associated catalog item.  This is NOT a recommended design for production, as the signals index would be very large.  However, this can be very useful for our examples, as the click data is easier for us to read and comprehend.
 
-________
-Great job! You now have a functioning Fusion app with data from utilizing the Parallel Bulk Loader! If you would like to save your Fusion App to reference later, you can do it now:
-1. Return to the Fusion Launcher
-2. Hover over your app and click on the cog that appears in the lower right corner
-3. Within the box that opens, click **Export app to zip**
+---
+<br>
 
-This concludes the PBL Lab.
+## Great job! You have successfully completed the Intro to Machine Learning Lab, where you have ingested and transformed data with the Parallel Bulk Loader (PBL) and Spark shell.
+
+<br>
+
+>Make sure to **Save** your open Fusion workspace tabs before exiting the application.
+
+<br>
+
+If you would like to save your Fusion app to import and practice with later, you can do it now:
+1. In the left navigation panel, click **Apps**, then choose **Return to Launcher** from the list.
+2. Hover over your app until a cog appears in the lower right corner.
+3. Click the cog icon.
+4. In the pop-up window, click **Export app to zip**.
+
+---
+<br>
+
+## Hope to see you in our next course! 
+## Thanks and happy learning!

@@ -6,150 +6,275 @@ permalink: /aiclass/
 
 <link rel="stylesheet" href="/lib/public/global-training.css">
 
+## It may take a few minutes to fully load and display the Fusion environment. Please do not click *Start lab* again. 
+<br>
 
-## The environment should begin to load immediately. Please do not click *Start Lab* again. It may take a few minutes for the Fusion environment to fully display.
+>When the Fusion Login page displays, login:
+>* USERNAME: ```admin```
+>* PASSWORD: ```password123```
 
-When the Fusion Login page displays, login:
-   * USERNAME: ```admin```
-   * PASSWORD: ```password123```
+<br>
 
-## In this lab  you will inspect a collection, train a classifier model, implement classification at query time, and test the classifier pipeline! Let's get started by inspecting the collection on the app that you built in the first lab.
+## Welcome to the Classification Lab! <br> Through this set of lab activities, you will inspect a collection, train a classifier model, implement classification at query time, and test the classifier pipeline.
 
-1. Click on the app **Labs** to enter the *Fusion workspace*, this is where you can build and test the classifier model. Before proceeding with the lab, please make your way to the JOBS tab under COLLECTIONS located on the side menu. Make sure that both the BestBuy_catalog and BestBuy_signals_labs jobs have run. If you see a caution sign, please run that job again before attempting to go any further.
+---
+<br>
 
-# Inspecting the Collection
+For this lab, we will be building a classifier that predicts which store department a user is interested in based on their input query. This involves finding correlations between certain query terms and the store department the user ultimately clicks into. We will be doing this using the **Labs** app created in the Intro to Machine Learning lab. 
 
-2. Click the **Collections** dropdown in the top left navigation header and select **Labs_signals**
+1. On the Fusion launch page, click the **Labs** app to open it and enter the Fusion workspace.
 
-3. Hover over the **QUERYING** icon in the sidebar, then click **Query Workbench**
+>Before proceeding with the lab, please navigate to the **Jobs** tab (**Collections > Jobs**). Make sure that both the **BestBuy_catalog** and **BestBuy_signals_labs** jobs have run. If you see a caution sign, please run the job again before continuing on in the lab.
 
->Note: In this lab, we will build a classifier that predicts which store department a user is interested in based on their input query. This involves finding correlations between certain query terms and the store department the user ultimately clicks into.
+<br>
+
+## Inspecting the Collection
+
+Let's start with an exercise to help understand why using classifiers is a good idea.
+
+2. In the top left corner, click the Collections dropdown, then select the **Lab_signals** collection.
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/navigation/nav_collectiondropdown.png" style="height: 320px; width: 200px;"/>
+
+<br>
+
+3. In the left navigation pane, click **Querying**, then select **Query Workbench** from the list.
+
+ <img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/navigation/nav_querying.png" style="height: 300px; width:200px;"/>
+
+<br>
    
-4. Excecute the `query:"washer dryer combo"`
+4. In the search field, execute a query search for ```"washer dryer combo"```.
 
->Note: Everyone who searched for “washer dryer combo” also clicked on an item from the APPLIANCE department.  Not every query is this clear-cut.
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/aiclass/aiclass_wdsearch.png"/>
 
-<img src="https://storage.googleapis.com/fusion-datasets/5.4_Markdown_images/03%20AI/Lab%202%20Query%20example.png" style="height: 200px; width:250px;"/>
+<br>
 
+Notice in the search results that everyone who searched for “washer dryer combo” also clicked on an item from the APPLIANCE department. Not every query is this clear-cut.
 
-5. Execute the query `query:charger`
+<br>
+Let's try another one.
 
->Note: These results are ambiguous,  however there is still a clear trend towards ACCESSORIES. These patterns can be captured and learned by a Classifier; then used to influence relevancy at query time.
+5. In the search field, execute a query search for ```"charger"```.
 
-# Training a Classifier Model
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/aiclass/aiclass_chargersearch.png"/>
 
-6. Hover over the **COLLECTIONS** icon in the sidebar, then click **Jobs**
+<br>
 
-7. Click **Add+**, from the drop-down menu, select **Logistic Regression Classifier Training**
-8. Click **Advanced**. Let's add some parameters:
-    * Change the **Spark Job ID** to ``department_qi_model`` 
-    * Update the **Training Collection** to ``Labs_signals``
-    * Update the **Field to Vectorize** to ``longDescription`` 
-    * Update the **Label Field** to ``department``
-    * Update the **Auto-balance training classes** to **un-enabled** 
-    * Change **Grid Search with Cross Validation** to **enabled** 
-    * Update the **Elastic Net Weight** to ``0.2``
+Notice, that these results are ambiguous, however there is still a clear trend towards ACCESSORIES. These patterns can be captured and learned by a classifier, which can then used to influence relevancy at query time.
+
+<br>
+
+## Training a Classifier Model
+
+Now that we hae a better grasp on why we use classifiers, let's set up the job to train our classifier.
+
+6. In the left navigation pane, click **Collections**, then select **Jobs** from the list.
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/navigation/nav_collections.png" style="height: 300px; width: 180px"/>
+
+7. In the Jobs pane, click **Add+** and begin typing ```logistic```, then select **Logistic Regression Classifier Training** from the autosuggestion list.
+
+8. In the job configuration window, enter the following values:
+* In the **Spark Job ID** field, enter ```department_qi_model```. 
+* In the **Training Collection** field, enter ```Labs_signals```.
+* In the **Field to Vectorize** field, enter ```longDescription```. 
+* In the **Label Field** field, enter ```department```.
+
+9. Click to enable the **Advanced** fields. 
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/aiclass/aiclass_trainingjobsettings_1.png"/>
+
+<br>
+
+10. Scroll down and click to expand the Model Tuning Parameters section, then make the following selections:
+* Deselect the **Auto-balance training classes** field. 
+* Select the **Grid Search with Cross Validation** field. 
+* In the **Elastic Net Weight** field, enter ```0.2```.
 
 <details>
 
-<summary>Why these parameters?</summary> 
+<summary><b>Why these parameters?</b></summary> 
 
 |     Parameter    |      Value                   |Explanation                |
 |----------------|-------------------------------|-----------------------------|
-|Spark Job ID |`department_qi_model`         |Unique name for this job.  This will also be Model name, so make it intuitive          |
+|Spark Job ID |`department_qi_model`         |Unique name for this job.  This will also be the Model name, so make it intuitive.          |
 |Training Collection      |`Labs_signals`            |Collection from which to pull data.|
-|Field to Vectorize         |`longDescription`|The input field. Model will predict a label based on the contents of this field|
-|Label Field |`department`         |'The output field.  The model will write its prediction label here.|
-|Auto-balance training classes     |`un-enabled`            |Ensure that all classes of training data have the same size|
-|Grid Search with Cross Validation       |`enabled`|Cross Validation is always enabled.  This parameter also enables Grid Search, which will experimentally determine the “best” values for Elastic Net Weight and Regularization Weight|
-|Elastic Net Weigh  |`0.2`            |The Elastic Net (link) allows smooth interpolation of the L1 and L2 regularization methods.  There is no single “correct” value for this, but a small number between 0 and 1 is a good base.|
+|Field to Vectorize         |`longDescription`|The input field. The model will predict a label based on the contents of this field.|
+|Label Field |`department`         |The output field.  The model will write its prediction label here.|
+|Auto-balance training classes     |`disabled`            |Disabling this ensures that all classes of training data have the same size.|
+|Grid Search with Cross Validation       |`enabled`|Cross Validation is always enabled.  This parameter also enables Grid Search, which will experimentally determine the “best” values for Elastic Net Weight and Regularization Weight.|
+|Elastic Net Weight  |`0.2`            |The Elastic Net (link) allows smooth interpolation of the L1 and L2 regularization methods.  There is no single “correct” value for this, but a small number between 0 and 1 is a good base.|
 
 </details>
 
-<br/>
-9. Click **Save**, then click **Run**, then click **Start**
+<br>
 
->Note: Success! The job will take about a minute, when it's done, the "running" icon will change to a "sunshine". 
+11. Click **Save** to create the new job.
 
-# Implementing Classification at Query Time
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/aiclass/aiclass_trainingjobsettings_2.png"/>
 
-10. Click the **Collections** dropdown and select **Labs**
+<br>
 
-11. Hover over the **QUERYING** icon in the sidebar, then click **Query Workbench**
+12. Click **Run**, then click **Start** in the job dialog to start the job.
 
-12. Click **New** in the upper right corner of the Query Workbench, then click **Save** in the upper right corner. In the Save Pipeline box, name the new pipeline **Labs_department_QI**, then click **Save**
+>The job will take a couple minutes to run. Note that the **Running** indicator displays while the job is in process, and will change to **Success** when the job is complete.
 
-<img src="https://storage.googleapis.com/fusion-datasets/5.4_Markdown_images/03%20AI/Lab%202%20New%20Query%20Pipeline.png" style="height: 250px; width:3
-00px;"/>
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/aiclass/aiclass_runjob.png"/>
 
-13. Click **Add a Stage** and select **Machine Learning**. Let's add some parameters:
-    * Change the **Label** to ``department_QI_classifier`` 
+<br>
 
-    * Update the **Machine Learning Model ID** to ``department_qi_model``
+13. Once the job is complete, click **X** to close the job dialog.
 
-    * Update the **Model input transformation script** to:
-    
-* 
-<code>
-    var modelInput = new java.util.HashMap();
+<br>
+
+## Implementing Classification at Query Time
+
+Now that we have set up and run the classifier job, let's implement classification in our workspace and view our results.
+
+First, we need to create a new query pipeline.
+
+14. In the left navigation pane, click **Querying**, then select **Query Workbench** from the list.
+
+15. In the top right corner of the Query Workbench window, click **New**, then click **Save**.  
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/aiclass/aiclass_addpipeline_1.png"/>
+
+<br>
+
+16. In the Save Pipeline dialog, enter **Labs_department_QI** for the name of the pipeline, then click **Save pipeline**.
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/aiclass/aiclass_addpipeline_2.png"/>
+
+<br>
+
+Next, let's add a new stage to our pipeline.
+
+17. In the Query Workbench pane, click **Add a Stage** and begin typing ```machine```, then select **Machine Learning** from the autosuggestion list. 
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/aiclass/aiclass_addstage.png"/>
+
+<br>
+
+18. In the stage configuration window, enter the following values:
+* In the **Label** field, enter ```department_QI_classifier```. 
+* Click in the **Machine Learning Model ID** field and select the ```department_qi_model``` option.
+
+19. Copy and paste the follow value into the **Model input transformation script** field:
+
+```
+var modelInput = new java.util.HashMap();
 modelInput.put("concatField", request.getFirstParam("q"));
 modelInput
-</code>
+```
    
-14. Update the **Model output transformation script** to:
-<code>
+20. Copy and paste the following value into the **Model output transformation script** field:
+
+```
 request.putSingleParam("predicted_department", modelOutput.get("labelPredictedByFusionModel"));
-</code>
+```
 
-15. Click **Apply**, then click **Cancel** to close the query pipeline
+21. Click **Apply** to create the new ```department_QI_classifier``` stage, then click **Cancel** to collapse the stage configuration window.
 
->Note: The classifier stage calculates a label in the predicted_department field of each query request but doesn’t do anything with that label.  We will create another stage that uses the label to filter or boost documents based on the label.
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/aiclass/aiclass_stagefields.png"/>
 
-16. Click **Add a Stage** and select **Additional Query Parameters**. Let's add some parameters:
-    * Change the **Label** to ``QI_department_filter``
+<br>
 
-    * Under **Parameters and Values**, click **+** to add a new parameter 
+This new classifier stage calculates a label in the **predicted_department** field of each query request, but doesn’t do anything with that label.  
 
-      * Change the **Parameter Name** to ``fq`` 
+Next, we will create another stage that uses the label to filter or boost documents based on the label.
 
-      * Update the **Parameter Value** to ``department:"<predicted_department>"`` 
+22. Click **Add a Stage**, begin typing ```additional```, then select **Additional Query Parameters** from the autosuggestion list. 
 
-17. Click **Apply**, then click **Cancel**. 
-    * Using the three horizontol lines icon, drag the **QI_department_filter** stage so that it appears after the **department_QI_Classifier** stage in the Query Pipeline stages
+23. In the stage's **Label** field, enter ```QI_department_filter```.
 
-18. Click **Save** and save over the existing pipeline
+24. In the Parameters and Values section, click the green plus to add a parameter and enter the following values: 
+* In the **Parameter Name** field, enter ```fq```.
+* In the **Parameter Value** field, enter ```department:"<predicted_department>"```. 
 
-# Testing the Classifier Pipeline
+25. Click **Apply** to save your the new ```QI_department_filter``` field, then click **Cancel** to collapse the configuration window. 
 
-19. Using the **Labs_department_QI** pipeline, excecute the query **ipod cover**
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/aiclass/aiclass_filterstagefields.png"/>
 
-20. Click **Add a field facet** and select **department**
+<br>
 
-21. Click **Display Fields** in the upper right corner of the Query Workbench and change the **NAME** display field to ``name``
+26. Using the stage's hamburger icon, move the **QI_department_filter** stage so that it appears *after* the **department_QI_classifier** stage in the Query Pipeline stages.
 
->Note: The classifier associates the query (ipod cover) with COMPUTERS department.  The department filter stage eliminates all documents from every other department.
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/aiclass/aiclass_movestage.png"/>
 
-22. Click the green circle to disable the **QI_department_filter** query pipeline stage. Note that the department facet now includes documents from APPLIANCE, ACCESSORIES and COMPUTERS.
+<br>
 
-23. Re-enable the **QI_department_filters** query pipeline stage and click on it to open the editor
+27. Click **Save** to save your changes to the pipeline, then click **Yes, save over the existing pipeline** to confirm the action.
 
->Note: Filtering is not the only way we can utilize the classifier label.  In fact, it is probably one of the least effective methods because, in cases where the classifier is “wrong”, the user-desired-department will not appear at all.  Instead, lets use the classifier label to implement a relevance boost.  In this case, the predicted department will still rise to the top of the results, but the other documents are still there to be found in case the prediction was wrong.
+<br>
 
-24. Change the Parameter Name to ``bq`` and the Parameter Value to ``department:"<predicted_department>"^20``
+## Testing the Classifier Pipeline
 
-25. Click **Apply**, then **Cancel**
+Now that our pipeline is set up in the workspace, it's time to test it out.
 
->Note: Now we get the same COMPUTERS documents in the top results as we did with a Filter Query, but without sacrificing the other documents in case of a classifier mistake.
+28. Using the **Labs_department_QI** pipeline, excecute a query for ```ipod cover```.
 
-<img src="https://storage.googleapis.com/fusion-datasets/5.4_Markdown_images/03%20AI/Lab%202%20Final%20Edit.png" style="height: 350px; width:300px;"/>
+29. Click **Display Fields**, and enter ```name``` in the **NAME** field.
 
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/aiclass/aiclass_namedisplay.png"/>
 
-26. Make sure to **Save** your open Fusion Workspace tabs!
+<br>
 
-________
-Great job! You now have a functioning query intent classification model! If you would like to save your Fusion App to reference later, you can do it now:
-1. Return to the Fusion Launcher
-2. Hover over your app and click on the cog that appears in the lower right corner
-3. Within the box that opens, click **Export app to zip**
+30. Click **Add a field facet**, begin typing ```department``` then select **department** in the autosuggestion list.
 
-This concludes the Building a Query Intent Classifier Lab.
+><b>Note:</b> As displayed in the image below, the classifier associates the query (```ipod cover```) with the COMPUTERS department.  The **QI_department_filter** stage eliminates all documents from every other department.
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/aiclass/aiclass_filter.png"/>
+
+<br>
+
+31. Click the green circle next to the **QI_department_filter** stage to disable it. 
+
+Notice that the department facet now includes documents from APPLIANCE, ACCESSORIES and COMPUTERS.
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/aiclass/aiclass_nofilter.png"/>
+
+<br>
+
+Filtering is not the only way we can utilize the classifier label.  In fact, it is probably one of the least effective methods because, in cases where the classifier is “wrong”, the user-desired-department will not appear at all.  
+
+Let's instead use the classifier label to implement a relevance boost.  In this case, the predicted department will still rise to the top of the results, but the other documents are still there to be found in case the prediction was wrong.
+
+32. Click the circle next to the **QI_department_filter** stage to re-enable it. 
+
+33. Click the **QI_department_filter** stage to open the configuration window, then make the following value changes:
+* Change the **Parameter Name** field to ```bq```.
+* Change the **Parameter Value** to ```department:"<predicted_department>"^20```.
+
+34. Click **Apply** to save your changes to the stage, then click **Cancel** to collapse the stage configuration window and view the changes to your results.
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/aiclass/aiclass_filterchanges.png"/>
+
+<br>
+
+Notice that now we get the same COMPUTERS documents in the top results as we did with a filter query, but without sacrificing the other documents in case of a classifier mistake.
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/aiclass/aiclass_newfilter.png"/>
+
+---
+<br>
+
+## Great job! You have successfully completed the Classification Lab, where you have created a functioning query intent classification model.
+
+<br>
+
+>Make sure to **Save** your open Fusion workspace tabs before exiting the application.
+
+<br>
+
+If you would like to save your Fusion app to import and practice with later, you can do it now:
+1. In the left navigation panel, click **Apps**, then choose **Return to Launcher** from the list.
+2. Hover over your app until a cog appears in the lower right corner.
+3. Click the cog icon.
+4. In the pop-up window, click **Export app to zip**.
+
+---
+<br>
+
+## Hope to see you in our next course! 
+## Thanks and happy learning!

@@ -1,1 +1,1 @@
-Future licences here.
+Future licenses here.

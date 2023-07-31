@@ -6,17 +6,21 @@ permalink: /afsql/
 
 <link rel="stylesheet" href="/lib/public/global-training.css">
 
-## The environment should begin to load immediately. Please do not click *Start Lab* again. It may take a few minutes for the Fusion environment to fully display.
+## It may take a few minutes to fully load and display the Fusion environment. Please do not click *Start lab* again. 
+<br>
 
-When the Fusion Login page displays, login:
-   * USERNAME: ```admin```
-   * PASSWORD: ```password123```
+>When the Fusion Login page displays, login:
+>* USERNAME: ```admin```
+>* PASSWORD: ```password123```
 
-# In this lab  you will learn how to connect to Jupyter, and explore data in Jupyter. Let's get started!
+<br>
 
-> Note: You may need to adjust the size of the instructions panel to fully view results in the UI. Toggle the window sizes as needed.
+## Welcome to the Fusion SQL Lab! <br> Through this set of lab activities, you will learn how to connect to and explore data in Jupyter.
 
-#  Connecting to Jupyter
+---
+<br>
+
+##  Connecting to Jupyter
 
 1. Click **Jupyter** at the top of the screen. Note that a new tab will open with Fusion Jupyter.
 
@@ -26,7 +30,7 @@ This is what you will see after logging in:
 
 <br>
 
-We will create a new jupyter notebook
+For our first activity, we will be creating a new Jupyter notebook.
 
 2. Click the **New** button in the upper right
 
@@ -134,9 +138,25 @@ Had we not indicated that we wanted them grouped together, our query would have 
 
     * Here we place a limit of 100 due to the sheer volume of our query
 
-## Great job! If you would like to save your Fusion App to reference later, you can do it now:
+---
+<br>
 
-1. Return to the Fusion Launcher
-2. Hover over your app and click on the cog that appears in the lower right corner
-3. Within the box that opens, click **Export app to zip**
+## Great job! You have successfully completed the Fusion SQL Lab, where you have learned how to how to connect to and explore data in Jupyter.
 
+<br>
+
+>Make sure to **Save** your open Fusion workspace tabs before exiting the application.
+
+<br>
+
+If you would like to save your Fusion app to import and practice with later, you can do it now:
+1. In the left navigation panel, click **Apps**, then choose **Return to Launcher** from the list.
+2. Hover over your app until a cog appears in the lower right corner.
+3. Click the cog icon.
+4. In the pop-up window, click **Export app to zip**.
+  
+---
+<br>
+
+## Hope to see you in our next course! 
+## Thanks and happy learning!

@@ -6,80 +6,142 @@ permalink: /ffrelev/
 
 <link rel="stylesheet" href="/lib/public/global-training.css">
 
+## It may take a few minutes to fully load and display the Fusion environment. Please do not click *Start lab* again. 
+<br>
 
-## The environment should begin to load immediately. Please do not click *Start Lab* again. It may take a few minutes for the Fusion environment to fully display.
+>When the Fusion Login page displays, login:
+>* USERNAME: ```admin```
+>* PASSWORD: ```password123```
 
-When the Fusion Login page displays, login:
-* USERNAME: ```admin```
-* PASSWORD: ```password123```
+<br>
 
-## Welcome to Relevance Lab, in this lab you will see BM25 in action and apply boosts to manage relevance.....Let's get started by accessing the Online Shoes app...
+## Welcome to the Relevance Lab! <br> Through this set of lab activities, you will see how the BM25 algorithm affects document scoring, then apply boosts to increase the relevance of our returned results.
 
+---
+<br>
 
-1. At the Fusion Launcher, click on the **Online_Shoes** app
-   
-2. Hover over the **QUERYING** icon, then click on **Query Workbench**
+For this lab, we will use the Online Shoes app from our Queries lab activities. 
 
-3. If you don't see any results, click **Load**, then click **Online_Shoes**
-   
+1. On the Fusion launch page, click the **Online_Shoes** app to open it and enter the Fusion workspace.
 
-# BM25
+<br>
 
->Note: Let’s look at a couple of things here:
-* The Query box: By default, the Query Workbench contains **\*:\***, This is the syntax for a query of all results.
-* Score:1 in grey: This is the BM25 score for each document. You will notice that it has the same value for each doc. That is because we are querying for all docs.
+## Document scoring
 
- <img src="https://storage.googleapis.com/fusion-datasets/5.4_Markdown_images/01%20FF/Relevance/step%205%20FF%20relevance.png" style="height: 200px; width:300px;"/>
+As a reminder, Fusion uses two different scoring algorithms to calculate how well a given document matches a query. One of these is BM25, which we are going to see in action here.
 
-<br />
-<br />
+2. In the left navigation pane, click **Querying**, then select **Query Workbench** from the list.
 
-5. Query for ```ballet shoes```
+ <img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/navigation/nav_querying.png" style="height: 300px; width:200px;"/>
 
->Note: Notice the BM25 score for each doc. The first two values are the same because they are the same shoe in different sizes. But notice as you scroll down through the remaining results, the scores get progressively lower. This is BM25 in action!
+<br>
 
-6. In the lower right, find the **View As** box and click on **Results**, in the pop-up, click on **Debug** 
+><b>Note:</b> If you don't see any results, click **Load** in the top right corner, then select **Online_Shoes** from the list. 
+<br>   
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/ffrelev/ffrelev_queryworkbenchload.png" style="height: 150px; width:450px;"/>
 
->Note: The upper part of the Debug view shows some general information about the query itself. We can see what type of parser is being used: Dismax. We can also see some boosting happening, (indicated by ^5.0) in various places. The explain section provides a full description of how the relevancy score for each document in the result set was calculated using the BM25 algorithm. Finally, notice that the weight of this document (16.696402 in this image) comes from the combined weights of the two individual words.
+<br>   
 
-7. Change **View As**: back to **Results** 
+Let’s look at a couple of things:
+* <b>The Query search field:</b> The default search contains <b>:*:</b>, which is the syntax for a query of all results.
+* <b>Score: 1 :</b> This is the BM25 score for a document. You will notice it has the same value for each document, based on the fact that we queried all available documents.
 
-# Boosting on Field Values
+ <img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/ffrelev/ffrelev_queryscorefields.png" />
 
-8. Click on the **Query Fields** stage on the left. Disable **Query Fields** by deselecting the green circle.
+<br>
 
->Note: We are disabling this stage because we want to use some custom parameters. We will create a new stage while keeping this original Query Fields stage for later use
+Let's enter a query and see how our document scores change.
 
-9. Click on **Add a Stage**, then begin typing ```additional``` for the auto-suggestion of **Additional Query Parameters** to appear. Click on **Additional Query Parameters**
+3. In the search field, execute a query for ```ballet shoes```.
 
-10. A **myQueryParams** box will open, fill it out with the following:
-* Label: ```myQueryParams```
-* Parameters and Values: click the green plus icon
-* Parameter Name: ```fl```
-* Paramter Value: *,score
-* Update Policy: replace
-* Click **Apply**
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/ffrelev/ffrelev_balletshoequery.png"/>
 
- <img src="https://storage.googleapis.com/fusion-datasets/5.4_Markdown_images/01%20FF/Relevance/step%2010%20FF%20relevance.png" style="height: 350px; width:300px;"/>
+<br>
 
-<br />
-<br />
+For our updated results, take note of the BM25 score for each returned document. Documents whose only difference is their size should have the same (or relatively identical) BM25 scores (as seen in the first and third document in the list), but you will notice as you scroll down through the remaining results, the scores get progressively lower. This is BM25 in action!
 
-11. Return to your **Results** (you may need to click **Cancel** in the myQueryParams box after clicking **Apply** to view your results)
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/ffrelev/ffrelev_balletshoescored.png"> 
 
->Note: Notice that our results have changed. Also take note of the Score of these documents, as they will change significantly in the next step.
+<br>
 
-12. Query for: ```ballet^10 shoes```
+4. In the lower right corner, locate the **View As** field. Click the dropdown arrow, then select **Debug** in the list. 
 
->Note: The results change. Notice the boosting of the term **ballet** makes the result scores much higher when the document contains the term. Try other boosting values and note the results.
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/ffrelev/ffrelev_debug.png"/>
 
-13. Make sure to **Save** your open Fusion Workspace tabs!
+<br>
 
-___________________________________________________________________________________
+The upper part of the Debug view shows some general information about the query itself. We can see that the Dismax parser is being used, and we can also see some boosting happening (indicated by ^5.0) in various places. <br><br>The **explain** section provides a full description of how the relevancy score for each document in the result set was calculated using the BM25 algorithm. Finally, notice that the weight of this document (16.696307 in this image) comes from the combined weights of the two individual words.
 
-Great job! You now know how the BM25 algortihm works and how to apply boosting to manipulate relevance.  If you would like to save your Fusion App to reference later, you can do it now:
-1. Return to the Fusion Launcher
-2. Hover over your app, a cog will appear in the lower right corner, click it
-3. On the box that opens, click **Export app to zip**
-   
-This concludes the Relevance Lab.
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/ffrelev/ffrelev_debugresults.png">
+
+<br>
+
+5. In the **View As** field, click the dropdown arrow, then select **Results** in the list.
+
+<br>
+
+## Boosting with field values
+
+6. Click the green circle next to the **Query Fields** stage to disable it.
+
+><b>Note:</b> We are disabling this stage because we want to use some custom parameters. We will create a new stage while keeping this original Query Fields stage for later use.
+
+<br>
+
+7. Click **Add a Stage** and begin typing ```additional```, then select **Additional Query Parameters** from the autosuggestion list.
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/ffrelev/ffrelev_addstage.png"/>
+
+<br>
+
+8. In the **Label** field, enter ```myQueryParams```.
+
+9. In the Parameters and Values section, click the green plus, then add the following values:
+* In the **Parameter Name** field, enter ```fl```.
+* In the **Parameter Value** field, enter ```*,score```.
+* Click the **Update Policy** field and select ```replace```.
+
+ <img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/ffrelev/ffrelev_myqueryparamsdetails.png" style="height: 350px; width:300px;"/>
+
+ <br>
+
+10. Click **Apply** to create the new ```myQueryParams``` stage, then click **Cancel** to collapse the configuration window and see a larger view of our results.
+
+<br>
+
+Notice that our results have changed with the addition of the new **myQueryParams** stage. 
+
+<br>
+
+For our last exercise in this lab, let's add a boost directly to the query, and see how the scores are affected. 
+
+11. In the search field, execute a query for ```ballet^10 shoes```.
+
+<img src="https://storage.googleapis.com/fusion-datasets/LabScreenshots_5.7/ffrelev/ffrelev_balletshoesboost.png">
+
+<br>
+
+Notice that the boosting of the term **ballet** has affected our returned results, making the result scores much higher when the document contains the boosted term. Feel free to try other boosting values and note the results.
+
+---
+<br>
+
+## Great job! You have successfully completed the Relevance Lab, where you have seen how the BM25 algortihm works, and learned how to apply boosting to manipulate document relevance. 
+
+<br>
+
+>Make sure to **Save** your open Fusion workspace tabs before exiting the application.
+
+<br>
+
+If you would like to save your Fusion app to import and practice with later, you can do it now:
+1. In the left navigation panel, click **Apps**, then choose **Return to Launcher** from the list.
+2. Hover over your app until a cog appears in the lower right corner.
+3. Click the cog icon.
+4. In the pop-up window, click **Export app to zip**.
+
+-----
+<br>
+
+## Hope to see you in our next course! 
+## Thanks and happy learning!
