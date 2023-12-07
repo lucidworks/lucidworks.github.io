@@ -8,14 +8,11 @@ permalink: /genaillm/
 
 <!--https://docs.google.com/document/d/1HVgVnln8To2yZeOQOmW9tM5fYnKOQbQVAGSnOa_R9Xg/edit-->
 
-## About the Fusion environment
-
-The environment is loading. Do not click **Start Lab** again. It may take a few minutes for the Fusion environment to appear.
- 
-When the Fusion login page appears, use the following username and password to log in:
-
-* **Username:** `USERNAME`
-* **Password:** `PASSWORD`
+> ## ⚠️ About the Fusion lab environment
+> 
+> While the environment is loading, do not click **Start Lab** again. It may take a few minutes for the Fusion environment to appear.
+>  
+> When the Fusion login page appears, use the following provided username and password.
 
 <!--Include info on the state of the lab? That is, this lab is already set up and ready to go.-->
 
@@ -24,14 +21,17 @@ When the Fusion login page appears, use the following username and password to l
 In this lab, you will be exploring how you can use Fusion together with Large Language Models (LLM).
  
 1. From the app launcher, click on the app **lab-genai**.
-2. Hover over the **Query** menu, then select **Query Workbench**.
+2. Hold the pointer over over the **Querying** menu, then select **Query Workbench**.
 
     We will be exploring some of the query pipelines that are shown on the left.
 
     **ChatGPT - [Initialize]** stage
 
 3. **Click on the ChatGPT - [Initialize]** stage.
-4. Click into the script body. The script has two sections that we will look at, which are notated with JavaScript comments which start with `//`.  
+4. Click into the script body. The script has two sections that we will look at, which are notated with JavaScript comments which start with `//`.
+
+<!--A permissions issue may be blocking the viewing of this script.-->
+
 5. Take a look at the *Set initial values and store in context object* code section. This is where we provide the API key for your chosen LLM provider.
  
     > ## ⚠️ Note
@@ -47,14 +47,16 @@ In this lab, you will be exploring how you can use Fusion together with Large La
  
     Note that this stage is not currently operational without valid API keys.
 
-<!--If it's not currently operational-->
+<!--Is that why it's off?-->
  
 8. The first major piece here is to validate the API key as seen in the *API key validation* section of the code.
 
 <!--This doesn't seem like a step. It seems to introduce the next step. Is that correct?-->
+<!--Are we just pointing out a safeguard for a missing API key?-->
 
 9.  Next, we will take a closer look at a couple of sections of **Build REST call for ChatGTP**.
 
+<!--This is a section in the previous pipeline stage, not a stage itself, right?-->
 <!--This doesn't seem like a step. It may need to be rewritten to instruct the user on what action they're taking-->
 
     > ## ⚠️ Note
@@ -67,19 +69,23 @@ In this lab, you will be exploring how you can use Fusion together with Large La
  
     **Lucidworks - NER - Map to Entities** and **Lucidworks - NER - Boost Entities** stages
  
-10. Click on the **Lucidworks - NER - Map to Entities** stage.
+1.  Click on the **Lucidworks - NER - Map to Entities** stage.
  
     * Look at the Tagger Collection. It is pointing at _lab-genai_query_rewrite_staging_ collection. We will look at this collection in a moment.
 <!--Given we look at it in the next step, why not mention it second?-->
     * Scroll down and look under Additional Params to be Included in the Text Tagger Request. Notice that we have a filter query (`fq`) on the ner2 tag.
+<!--No, we don't!-->
  
 1.  Hover over the collections dropdown, then select the _lab-genai_query_rewrite_staging_ collection. If you are prompted to save your changes, do not save.
 
+<!--This does not exist. The name is custom to the user.-->
 <!--This will probably need an image, as there's a Collection menu too.-->
  
-12. Hover over the **Query** menu, then select **Query Workbench**. The results shown are our named entities derived from the `state_s` field.
+1.  Hover over the **Querying** menu, then select **Query Workbench**. The results shown are our named entities derived from the `state_s` field.
+
+<!--There are no search results!!! No data in the collection = no search results.-->
  
-13. Click **Show fields** on any of the results.
+2.  Click **Show fields** on any of the results.
  
     * You can see the output and the `surface_form` being associated with the various states.
     * Additionally, you can see the ner2 tag that is being used in the query pipeline.
@@ -90,7 +96,7 @@ In this lab, you will be exploring how you can use Fusion together with Large La
 
 <!--This doesn't seem like a step.-->
 
-15. Click on the **Lucidworks - NER - Boost Entities** stage.You can see various instructions for how to boost results here:
+15. Click on the **Lucidworks - NER - Boost Entities** stage. You can see various instructions for how to boost results here:
     * // First part matches both.
     * // Second part matches both.
     * // Modify to include "OR" operator if multiple fields of the same type.
