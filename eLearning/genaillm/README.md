@@ -17,8 +17,8 @@ permalink: /genaillm/
   
 In this lab, you will be exploring how you can use Fusion together with Large Language Models (LLM).
  
-1. From the app launcher, click on the app **lab-genai**.
-2. Hold the pointer over over the **Querying** menu, then select **Query Workbench**.
+1. From the app launcher, click on the app **genai-(Username)**.
+2. Hold the pointer over the **Querying** menu, then select **Query Workbench**.
 
     We will be exploring some of the query pipelines that are shown on the left.
 
@@ -65,7 +65,7 @@ In this lab, you will be exploring how you can use Fusion together with Large La
     * Look at the Tagger Collection. It is pointing at _lab-genai_query_rewrite_staging_ collection. We will look at this collection in a moment.
     * Scroll down and look under Additional Params to be Included in the Text Tagger Request. Notice that we have a filter query (`fq`) on the ner2 tag.
  
-1.  Hover over the collections dropdown, then select the _lab-genai_query_rewrite_staging_ collection. If you are prompted to save your changes, do not save.
+1.  Hover over the collections dropdown, then select the _lab-genai-(Username)_query_rewrite_staging_ collection. If you are prompted to save your changes, do not save.
 
  
 1.  Hover over the **Querying** menu, then select **Query Workbench**. The results shown are our named entities derived from the `state_s` field.
@@ -89,5 +89,16 @@ In this lab, you will be exploring how you can use Fusion together with Large La
  
 ## Queries Examples
  
-Before proceeding make sure that the **ChatGPT - [Mock Prompt] Destination Locations** stage is turned off.
+16. Return to the **genai** collection by selecting it in the collection dropdown.
 
+17. Click on **Cancel** at the bottom of any open query pipeline stages in order to better view the **Query Workbench**.
+
+18. Click the **Display Fields** box in the upper right. Change **Name** to `property_name_s` and **Description**
+
+Next, we will run some conversaional queries about various types of places to stay.
+
+19. In this first scenario, imagine that you are a huge fan of the Goonies movie and you are finally making your way to Astoria Oregon to see where it was all filmed. Input a conversational query such as `hotels near goonies house` or `I'm finally going to visit the goonies set`. The three returned results are all in Oregon
+
+20. In our second scenario, lets say that you enjoy hiking but don't enjoy camping outside overnight. Input a converational query like `Where to stay where there is great hiking` or `hiking hotels`. You can quickly see that the top resultas are from the state of Colorado. This makes sense as Colorado has a lot of mountains for hiking.
+
+21. In the final scenario, you are planning a trip to Napa Valley wine country. Input a conversaional query similar to `best places to stay in wine country` or `wine country lodging`. Here the results are not all pointing to California. There are multiple wine country regions in the Unitied States. This is something to be careful of.
