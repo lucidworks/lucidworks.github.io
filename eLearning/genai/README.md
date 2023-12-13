@@ -1,7 +1,7 @@
 ---
 layout: page
 title: LLM Lab (in-dev)
-permalink: /genaillm/
+permalink: /genai/
 ---
 
 
