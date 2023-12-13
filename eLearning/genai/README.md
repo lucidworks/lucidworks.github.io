@@ -1,6 +1,6 @@
 ---
 layout: page
-title: LLM Lab (in-dev)
+title: LLM in Fusion
 permalink: /genai/
 ---
 
