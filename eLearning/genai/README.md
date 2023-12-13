@@ -10,14 +10,14 @@ permalink: /genai/
 > 
 > While the environment is loading, do not click **Start Lab** again. It may take a few minutes for the Fusion environment to appear.
 >  
-> When the Fusion login page appears, use the following provided username and password.
+> When the Fusion login page appears, use the above provided username and password. Please minimize the **Credentials** window before proceeding.
 
 
 ## Lab instructions
   
 In this lab, you will be exploring how you can use Fusion together with Large Language Models (LLM).
  
-1. From the app launcher, click on the app **genai-(Username)**.
+1. From the app launcher, click on the app **Properties**.
 2. Hold the pointer over the **Querying** menu, then select **Query Workbench**.
 
     We will be exploring some of the query pipelines that are shown on the left.
@@ -48,15 +48,14 @@ In this lab, you will be exploring how you can use Fusion together with Large La
 
 
 9.  Next, we will take a closer look at a couple of sections of **Build REST call for ChatGTP**.
-
-
-    > ## ⚠️ Note
-    > This stage is only necessary because we are not using a real LLM API key. As such, this type of stage would not be used out in the wild and is strictly used for this lab environment. We will not need to dive into this stage further.
  
     * The *Prompt instructions code* section is where we limit our results being returned from the LLM. In this case, we are only interested in city locations, destinations, and activities and we only want results from within the United States.
     * The next sections in the code are in a standard REST call layout: define the JSON body, give header options, execute the call, get a response, and parse it in your desired format.
  
     ChatGPT - [Mock Prompt] Destination Locations
+
+    > ## ⚠️ Note
+    > This stage is only necessary because we are not using a real LLM API key. As such, this type of stage would not be used out in the wild and is strictly used for this lab environment. We will not need to dive into this stage further.
  
     **Lucidworks - NER - Map to Entities** and **Lucidworks - NER - Boost Entities** stages
  
