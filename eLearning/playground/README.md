@@ -10,10 +10,6 @@ permalink: /playground/
 
 This laboratory environment provides a controlled and secure platform to explore and experiment with a pre-configured Fusion application. The application is specifically designed for e-commerce functionalities and is populated with diverse datasets, offering users a rich sandbox for testing and learning.
 
-## Introduction to the E-Commerce Playground Lab
-
-This laboratory environment provides a controlled and secure platform to explore and experiment with a pre-configured Fusion application. The application is specifically designed for e-commerce functionalities and is populated with diverse datasets, offering users a rich sandbox for testing and learning.
-
 ### Datasources
 
 * **Clothing:** An extensive catalog exceeding 1,000 clothing items, meticulously categorized with style, color, and feature attributes.
