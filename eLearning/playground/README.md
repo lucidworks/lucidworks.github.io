@@ -14,7 +14,7 @@ This laboratory environment provides a controlled and secure platform to explore
 
 This laboratory environment provides a controlled and secure platform to explore and experiment with a pre-configured Fusion application. The application is specifically designed for e-commerce functionalities and is populated with diverse datasets, offering users a rich sandbox for testing and learning.
 
-### Datasource
+### Datasources
 
 * **Clothing:** An extensive catalog exceeding 1,000 clothing items, meticulously categorized with style, color, and feature attributes.
 * **Electronics:** A comprehensive selection of over 2,000 electronic devices, components, and software products, enabling exploration of a wide range of offerings.
