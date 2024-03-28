@@ -10,13 +10,6 @@ permalink: /site-search-playground/
 
 **To-do**
 
-* Add comments to all stages, existing rules, etc.
-* Clean up empty pipeline stages.
-
-**Basic things they can do**
-
-* Examine conflicting rules
-
 **Useful admonitions**
 
 > [!NOTE]  
@@ -34,6 +27,9 @@ permalink: /site-search-playground/
 > [!CAUTION]
 > Negative potential consequences of an action.
 
+**Images** 
+
+![Test image](images/test-im.png "Example image placeholder")
 
 -->
 
@@ -77,6 +73,8 @@ In this secure application, you have the ability to:
 
 Each datasource is set up in a similar way, but there are some key differences. For example, some datasources have unique values declared in **Exclusive regexes**.
 
+![Exclusive RegEx for a datasource](images/datasource-exclusive-regex.png "Datasource exclusive RegEx")
+
 > [!NOTE]  
 > In many cases, key datasource configurations can be found in the advanced view. Toggle **Advanced** on to view these settings. 
 
@@ -88,6 +86,12 @@ Navigate to **Indexing > Index pipelines**, then choose one of the `data-lucidwo
 
 Note that they all have **Call pipeline** stages called "Intake" and "Outtake." By routing data through these separate, shared index pipelines, Fusion ensures that the data is processed the same at certain phases of indexing. This avoids the need to duplicate work across multiple index pipelines. 
 
+![Call pipeline usage](images/index-pipeline-intake.png "Call pipeline index stages")
+
+> [!TIP]
+> You can use a **Call pipeline** query pipeline stage for similar purposes.
+
+
 #### Query pipeline
 
 Head to the Query Workbench by navigating to **Querying > Query Workbench**.
@@ -98,7 +102,10 @@ From here, you can enter a query and view the results. Try turning stages on and
 
 In the Query Workbench, you can enable click signals to see how clicking on results affects the document's score (relevancy) and position within the results. 
 
-Click **Format Results**, select the **Send click signals** checkbox, and save your change. If you want to generate many signals at once, select the **Show signals generator** checkbox, and a simulate option appears when hold the pointer over a result. 
+Click **Format Results**, select the **Send click signals** checkbox, and save your change. If you want to generate many signals at once, select the **Show signals generator** checkbox, and a simulate option appears when hold the pointer over a result.
+
+![Send click signals in Query Workbench](images/qwb-send-signals.png "Send click signals in Query Workbench")
+
 
 ### Create business rules
 
@@ -124,20 +131,29 @@ Now that you've created some business rules and rewrites, navigate to Experience
 
 Begin by entering a search term in the search box. From the results list, you can choose to block a document from appearing, pin a document in its current position, bury a document lower in the result, or boost a document higher in the result. If you want to pin a document in a specific position, you can drag it where you want it.
 
+<div style="position: relative; padding-bottom: calc(51.78125% + 42px); height: 0;"><iframe src="https://app.supademo.com/embed/ft9Rms9EBaqQFnduqRt5P" allow="clipboard-write" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
 Rules are created automatically from your interactions, and they are available to edit, delete, or publish in the **Rules** screen.
 
 To create query rewrites, enter a search term in the search box, and click the **Add** button that appears next to the term. Select any of the query rewrite options to create a new query rewrite. 
 
+<div style="position: relative; padding-bottom: calc(51.78125% + 42px); height: 0;"><iframe src="https://app.supademo.com/embed/V82C_bR_syCuDPuK48-PB" allow="clipboard-write" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
 Like rules, query rewrites you create in Experience Optimizer are available in the **Rewrites** screen.
 
-
-### Create your own template
-
-Templates help control the look and feel of Experience Optimizer. 
-
-ASDF
-
 ## Challenges
+
+These challenges are meant to be open-ended. How you solve the challenge is entirely up to you. If you're stuck, check the [Lucidworks documentation](https://doc.lucidworks.com/). 
+
+### Create your own landing template
+
+Templates help control the look and feel of Experience Optimizer, allowing you to design, test, and implement a wide variety of search experiences.
+
+In Experience Optimizer, you can create a custom landing template popular with new or existing zones. 
+
+### Configure triggers for a template
+
+You can trigger a template in Experience Optimizer based on conditions such as a time range, specific searches, or the URL context. If the required conditions are met, the template will load instead of the default, giving you fine-tuned control over the zone setup and layout. 
 
 ### Resolve conflicting rules
 
@@ -148,25 +164,6 @@ Fix the rules to resolve the warnings.
 ### Start working with tags
 
 Tags are useful for applying rules when for a specific template zone. This advanced option is configured in the Templates screen. Learn how to incorporate tags in your application. 
-
-### Configure triggers for a template
-
-You can trigger a template in Experience Optimizer based on conditions such as a time range, specific searches, or the URL context. If the required conditions are met, the template will load instead of the default, giving you fine-tuned control over the zone setup and layout. 
-
-<!-- 
-
-### Create a typeahead template for Experience Optimizer
-
-A good typeahead experience makes searching faster and more efficient for users.
-
-> [!TIP]
-> To get a jump start, begin with Experience Optimizer.
-> 
-> 1. Click the **Start Task** button. 
-> 1. Click the search bar. 
-> 1. Choose the option to create a new typeahead template.
-
--->
 
 ## What's next?
 
@@ -179,5 +176,5 @@ If you're ready to move on, we recommend the following resources:
 * Training module
 * Training module
 * Training module
-* Documentation
+* [Lucidworks documentation](https://doc.lucidworks.com/)
 * Ebook
