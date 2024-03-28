@@ -56,7 +56,7 @@ This lab environment provides a controlled and secure platform to explore and ex
 > [!IMPORTANT]  
 > Add a Supademo tour here. 
 
-<div style="position: relative; padding-bottom: calc(57.55080213903744% + 42px); height: 0;"><iframe src="https://app.supademo.com/embed/zNW_4xwfmGrXSHIPTAke4" allow="clipboard-write" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+<!-- Supademo embed. -->
 
 ### What you can do
 
