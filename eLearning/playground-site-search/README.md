@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Site Search playground
-permalink: /playground/
+permalink: /site-search-playground/
 ---
 
 <link rel="stylesheet" href="/lib/public/global-training.css">
@@ -11,6 +11,7 @@ permalink: /playground/
 **To-do**
 
 * Add comments to all stages, existing rules, etc.
+* Clean up empty pipeline stages.
 
 **Basic things they can do**
 
@@ -43,16 +44,19 @@ This lab environment provides a controlled and secure platform to explore and ex
 
 ### Datasources
 
-* **Pages.** Core Lucidworks website content containing informative sections about the Lucidworks' purpose, services, or general information.
-* **Blog.** Regularly updated articles or posts covering a broad range of industry-related topics, news, or insights.
-* **E-books.** Downloadable publications offering in-depth information or guides on specific industry-related subjects.
-* **Events.** Information about gatherings, conferences, workshops, or other occurrences related to our industry, both past, present, and future.
-* **Videos.** Visual content covering informative presentations, demonstrations, or discussions on industry-specific topics.
+1. **Pages.** Core Lucidworks website content containing informative sections about the Lucidworks' purpose, services, or general information.
+1. **Blog.** Regularly updated articles or posts covering a broad range of industry-related topics, news, or insights.
+1. **E-books.** Downloadable publications offering in-depth information or guides on specific industry-related subjects.
+1. **Events.** Information about gatherings, conferences, workshops, or other occurrences related to our industry, both past, present, and future.
+1. **Videos.** Visual content covering informative presentations, demonstrations, or discussions on industry-specific topics.
 
 
 ### Tour
 
-<!-- Supademo embed. -->
+> [!IMPORTANT]  
+> Add a Supademo tour here. 
+
+<div style="position: relative; padding-bottom: calc(57.55080213903744% + 42px); height: 0;"><iframe src="https://app.supademo.com/embed/zNW_4xwfmGrXSHIPTAke4" allow="clipboard-write" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 ### What you can do
 
@@ -61,17 +65,32 @@ In this secure application, you have the ability to:
 * Create, modify, and delete index and query pipeline stages.
 * Work in the Query Workbench. 
 * Use the rules editor to create business rules, synonyms, misspelling corrections, and more. 
-* Play with Experience Optimizer to curate the ideal search experience.
+* Play with Experience Optimizer to curate your ideal search experience.
 
 ## Things to try
 
 ### Explore the data
 
+#### Datasources
+
+Each datasource is set up in a similar way, but there are some key differences. For example, some datasources have unique values declared in **Exclusive regexes**.
+
+> [!NOTE]  
+> In many cases, key datasource configurations can be found in the advanced view. Toggle **Advanced** on to view these settings. 
+
+#### Index pipelines
+
+Each datasource is pointed to a unique index pipeline, following a predictable naming pattern. For example, the blog datasource points to an index pipeline called `data-lucidworks-blog`.
+
+Navigate to **Indexing > Index pipelines**, then choose one of the `data-lucidworks-DATA_TYPE` pipelines. 
+
+Note that they all have **Call pipeline** stages called "Intake" and "Outtake." By routing data through these separate, shared index pipelines, Fusion ensures that the data is processed the same at certain phases of indexing. This avoids the need to duplicate work across multiple index pipelines. 
+
+#### Query pipeline
+
 Head to the Query Workbench by navigating to **Querying > Query Workbench**.
 
-From here, you can enter a query and view the results. You can also customize the facets in this view.
-
-Try turning stages on and off, then investigate what changed in the results.
+From here, you can enter a query and view the results. Try turning stages on and off, then investigate what changed in the results. You can also customize the facets in this view.
 
 ### Create signals
 
@@ -96,7 +115,19 @@ Add new rewrites, modify the existing ones, or delete everything to start over.
 
 ### Play with Experience Optimizer
 
-ASDF
+Now that you've created some business rules and rewrites, navigate to Experience Optimizer to see how to create them from a natural search experience. 
+
+> [!NOTE]  
+> Click the **Start task** button, if you want to start curating the search experience. 
+
+Begin by entering a search term in the search box. From the results list, you can choose to block a document from appearing, pin a document in its current position, bury a document lower in the result, or boost a document higher in the result. If you want to pin a document in a specific position, you can drag it where you want it.
+
+Rules are created automatically from your interactions, and they are available to edit, delete, or publish in the **Rules** screen.
+
+To create query rewrites, enter a search term in the search box, and click the **Add** button that appears next to the term. Select any of the query rewrite options to create a new query rewrite. 
+
+Like rules, query rewrites you create in Experience Optimizer are available in the **Rewrites** screen.
+
 
 ### Create your own template
 
@@ -110,6 +141,16 @@ The rules editor automatically detects rules that may conflict with each other. 
 
 Fix the rules to resolve the warnings.
 
+### Start working with tags
+
+Tags are useful for applying rules when for a specific template zone. This advanced option is configured in the Templates screen. 
+
+### Configure triggers for a template
+
+
+
+<!-- 
+
 ### Create a typeahead template for Experience Optimizer
 
 A good typeahead experience makes searching faster and more efficient for users.
@@ -120,3 +161,5 @@ A good typeahead experience makes searching faster and more efficient for users.
 > 1. Click the **Start Task** button. 
 > 1. Click the search bar. 
 > 1. Choose the option to create a new typeahead template.
+
+-->
