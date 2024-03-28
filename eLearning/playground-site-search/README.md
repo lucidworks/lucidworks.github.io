@@ -53,6 +53,8 @@ This lab environment provides a controlled and secure platform to explore and ex
 
 ### Tour
 
+![Test image](images/test-im.png "Example image placeholder")
+
 > [!IMPORTANT]  
 > Add a Supademo tour here. 
 
