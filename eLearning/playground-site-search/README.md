@@ -135,6 +135,8 @@ Like rules, query rewrites you create in Experience Optimizer are available in t
 
 Templates help control the look and feel of Experience Optimizer. 
 
+ASDF
+
 ## Challenges
 
 ### Resolve conflicting rules
@@ -145,11 +147,11 @@ Fix the rules to resolve the warnings.
 
 ### Start working with tags
 
-Tags are useful for applying rules when for a specific template zone. This advanced option is configured in the Templates screen. 
+Tags are useful for applying rules when for a specific template zone. This advanced option is configured in the Templates screen. Learn how to incorporate tags in your application. 
 
 ### Configure triggers for a template
 
-
+You can trigger a template in Experience Optimizer based on conditions such as a time range, specific searches, or the URL context. If the required conditions are met, the template will load instead of the default, giving you fine-tuned control over the zone setup and layout. 
 
 <!-- 
 
@@ -165,3 +167,17 @@ A good typeahead experience makes searching faster and more efficient for users.
 > 1. Choose the option to create a new typeahead template.
 
 -->
+
+## What's next?
+
+The site search playground is designed for you to continue exploring. 
+
+Congratulations on completing this software training lab! Now it's your turn to experiment. Try building new functionalities, delve into the data flow within Fusion, and see how you can craft the perfect search experience. 
+
+If you're ready to move on, we recommend the following resources: 
+
+* Training module
+* Training module
+* Training module
+* Documentation
+* Ebook
