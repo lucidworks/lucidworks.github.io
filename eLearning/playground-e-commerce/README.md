@@ -1,7 +1,7 @@
 ---
 layout: page
 title: E-commerce playground
-permalink: /e-commerce-playground/
+permalink: /playground-e-commerce/
 ---
 
 <link rel="stylesheet" href="/lib/public/global-training.css">

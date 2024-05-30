@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Site Search playground
-permalink: /site-search-playground/
+permalink: /playground-site-search/
 ---
 
 <link rel="stylesheet" href="/lib/public/global-training.css">
@@ -37,6 +37,8 @@ permalink: /site-search-playground/
 
 This lab environment provides a controlled and secure platform to explore and experiment with a pre-configured Fusion application. The application is specifically designed for site search functionalities and is populated with diverse datasets, offering users a rich sandbox for testing and learning.
 
+It is a basic implementation and serves as an excellent introduction to Fusion and its core features. 
+
 
 ### Datasources
 
@@ -52,7 +54,7 @@ This lab environment provides a controlled and secure platform to explore and ex
 ![Test image](images/test-im.png "Example image placeholder")
 
 > [!IMPORTANT]  
-> Add a Supademo tour here. 
+> Add a Supademo tour here. ^^^
 
 <!-- Supademo embed. -->
 
@@ -64,6 +66,7 @@ In this secure application, you have the ability to:
 * Work in the Query Workbench. 
 * Use the rules editor to create business rules, synonyms, misspelling corrections, and more. 
 * Play with Experience Optimizer to curate your ideal search experience.
+* Access most Fusion features and functionality, even when not pre-configured for this playground. 
 
 ## Things to try
 
@@ -114,11 +117,11 @@ Navigate to **Relevance > Rules**, to reach the rules editor. Make sure you're o
 Some examples are already set up for you. 
 
 > [!TIP]
-> You can test these rules in Experience Optimizer. View the condition and the action of a rule. Replicate the action in Experience Optimizer, and the action will fire. 
+> You can test these rules in Experience Optimizer. View the condition and the action of a rule. Replicate the condition in Experience Optimizer, and the action will fire. 
 
 ### Create rewrites
 
-Move to the **Rewrites** screen. Explore some of the rewrites that are already set up for you, such as misspelling and synonyms. 
+Navigate to the **Rewrites** screen. Explore some of the rewrites that are already set up for you, such as misspelling and synonyms. 
 
 Add new rewrites, modify the existing ones, or delete everything to start over.
 
@@ -173,8 +176,8 @@ Congratulations on completing this software training lab! Now it's your turn to 
 
 If you're ready to move on, we recommend the following resources: 
 
-* Training module
-* Training module
-* Training module
+* [Index and query profiles](https://academy.lucidworks.com/index-and-query-profiles)
+* [Exploring your data](https://academy.lucidworks.com/path/exploring-your-data)
+* [Experience Optimizer learning path](https://academy.lucidworks.com/path/experience-optimizer-learning-path)
+* [Query fine-tuning](https://academy.lucidworks.com/path/query-fine-tuning)
 * [Lucidworks documentation](https://doc.lucidworks.com/)
-* Ebook
