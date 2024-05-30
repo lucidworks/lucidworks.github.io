@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Site Search playground
-permalink: /site-search-playground/
+title: E-commerce playground
+permalink: /e-commerce-playground/
 ---
 
 <link rel="stylesheet" href="/lib/public/global-training.css">
@@ -35,16 +35,13 @@ permalink: /site-search-playground/
 
 ## About this lab
 
-This lab environment provides a controlled and secure platform to explore and experiment with a pre-configured Fusion application. The application is specifically designed for site search functionalities and is populated with diverse datasets, offering users a rich sandbox for testing and learning.
+<!-- This lab environment provides a controlled and secure platform to explore and experiment with a pre-configured Fusion application. The application is specifically designed for e-commerce functionalities and is populated with diverse datasets, offering users a rich sandbox for testing and learning. -->
 
 
 ### Datasources
 
-1. **Pages.** Core Lucidworks website content containing informative sections about the Lucidworks' purpose, services, or general information.
-1. **Blog.** Regularly updated articles or posts covering a broad range of industry-related topics, news, or insights.
-1. **E-books.** Downloadable publications offering in-depth information or guides on specific industry-related subjects.
-1. **Events.** Information about gatherings, conferences, workshops, or other occurrences related to our industry, both past, present, and future.
-1. **Videos.** Visual content covering informative presentations, demonstrations, or discussions on industry-specific topics.
+<!-- 1. **Pages.** Core Lucidworks website content containing informative sections about the Lucidworks' purpose, services, or general information.-->
+
 
 
 ### Tour
@@ -58,12 +55,12 @@ This lab environment provides a controlled and secure platform to explore and ex
 
 ### What you can do
 
-In this secure application, you have the ability to:
+<!-- In this secure application, you have the ability to:
 
 * Create, modify, and delete index and query pipeline stages.
 * Work in the Query Workbench. 
 * Use the rules editor to create business rules, synonyms, misspelling corrections, and more. 
-* Play with Experience Optimizer to curate your ideal search experience.
+* Play with Experience Optimizer to curate your ideal search experience.-->
 
 ## Things to try
 
@@ -71,16 +68,16 @@ In this secure application, you have the ability to:
 
 #### Datasources
 
-Each datasource is set up in a similar way, but there are some key differences. For example, some datasources have unique values declared in **Exclusive regexes**.
+<!-- Each datasource is set up in a similar way, but there are some key differences. For example, some datasources have unique values declared in **Exclusive regexes**.
 
 ![Exclusive RegEx for a datasource](images/datasource-exclusive-regex.png "Datasource exclusive RegEx")
 
 > [!NOTE]  
-> In many cases, key datasource configurations can be found in the advanced view. Toggle **Advanced** on to view these settings. 
+> In many cases, key datasource configurations can be found in the advanced view. Toggle **Advanced** on to view these settings. -->
 
 #### Index pipelines
 
-Each datasource is pointed to a unique index pipeline, following a predictable naming pattern. For example, the blog datasource points to an index pipeline called `data-lucidworks-blog`.
+<!-- Each datasource is pointed to a unique index pipeline, following a predictable naming pattern. For example, the blog datasource points to an index pipeline called `data-lucidworks-blog`.
 
 Navigate to **Indexing > Index pipelines**, then choose one of the `data-lucidworks-DATA_TYPE` pipelines. 
 
@@ -89,7 +86,7 @@ Note that they all have **Call pipeline** stages called "Intake" and "Outtake." 
 ![Call pipeline usage](images/index-pipeline-intake.png "Call pipeline index stages")
 
 > [!TIP]
-> You can use a **Call pipeline** query pipeline stage for similar purposes.
+> You can use a **Call pipeline** query pipeline stage for similar purposes.-->
 
 
 #### Query pipeline
