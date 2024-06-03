@@ -6,33 +6,6 @@ permalink: /playground-e-commerce/
 
 <link rel="stylesheet" href="/lib/public/global-training.css">
 
-<!-- NOTES
-
-**To-do**
-
-**Useful admonitions**
-
-> [!NOTE]  
-> Highlights information that users should take into account, even when skimming.
-
-> [!TIP]
-> Optional information to help a user be more successful.
-
-> [!IMPORTANT]  
-> Crucial information necessary for users to succeed.
-
-> [!WARNING]  
-> Critical content demanding immediate user attention due to potential risks.
-
-> [!CAUTION]
-> Negative potential consequences of an action.
-
-**Images** 
-
-![Test image](images/IMAGE_NAME.png "Example image placeholder")
-
--->
-
 ## About this lab
 
 This lab environment provides a controlled and secure platform to explore and experiment with a pre-configured Fusion application. The application is specifically designed for e-commerce functionalities, including an expansive data source of electronics products and accessories and a library of query rewrites. 
@@ -40,18 +13,7 @@ This lab environment provides a controlled and secure platform to explore and ex
 
 ### Datasources
 
-<!-- 1. **Pages.** Core Lucidworks website content containing informative sections about the Lucidworks' purpose, services, or general information.-->
-
 There is one data source in the e-commerce playground: **Electronics**. The data source contains over 40,000 products, from televisions to printers, speakers, and home appliances. 
-
-### Tour
-
-![Test image](images/test-im.png "Example image placeholder")
-
-> [!IMPORTANT]  
-> Add a Supademo tour here. 
-
-<!-- Supademo embed. -->
 
 ### What you can do
 

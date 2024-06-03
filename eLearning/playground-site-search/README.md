@@ -48,16 +48,6 @@ It is a basic implementation and serves as an excellent introduction to Fusion a
 1. **Events.** Information about gatherings, conferences, workshops, or other occurrences related to our industry, both past, present, and future.
 1. **Videos.** Visual content covering informative presentations, demonstrations, or discussions on industry-specific topics.
 
-
-### Tour
-
-![Test image](images/test-im.png "Example image placeholder")
-
-> [!IMPORTANT]  
-> Add a Supademo tour here. ^^^
-
-<!-- Supademo embed. -->
-
 ### What you can do
 
 In this secure application, you have the ability to:
