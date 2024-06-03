@@ -29,7 +29,7 @@ permalink: /playground-site-search/
 
 **Images** 
 
-![Test image](images/test-im.png "Example image placeholder")
+![Test image](images/IMAGE_NAME.png "Example image placeholder")
 
 -->
 
@@ -107,7 +107,7 @@ In the Query Workbench, you can enable click signals to see how clicking on resu
 
 Click **Format Results**, select the **Send click signals** checkbox, and save your change. If you want to generate many signals at once, select the **Show signals generator** checkbox, and a simulate option appears when hold the pointer over a result.
 
-![Send click signals in Query Workbench](images/qwb-send-signals.png "Send click signals in Query Workbench")
+![Send click signals in Query Workbench](../../static/images/qwb-send-signals.png "Send click signals in Query Workbench")
 
 
 ### Create business rules
