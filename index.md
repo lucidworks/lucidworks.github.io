@@ -6,17 +6,17 @@ permalink: //
 
 Welcome to Lucidworks Playgrounds. 
 
-Playgrounds provide an open learning experience focused on hands-on user discovery and exploration of Lucidworks products instead of strict, guided workflows. 
+Playgrounds offer an open learning environment designed to foster user discovery and exploration of our products through practical exercises, rather than rigid, guided workflows.
 
-Each playground app includes user documentation, which provides information about the app, the data sources, things to try, challenges, and additional resources.
+Each playground application comes equipped with user documentation detailing the app itself, the data sources it utilizes, suggested exploration paths, challenges to test your understanding, and links to additional resources.
 
-When you click the Start button, a new playground app, as well as a unique username and password, is created specifically for you.
+Click the **Start** button to create a new playground application specifically for you, complete with a unique username and password.
 
 > [!IMPORTANT]
 > **You are in control!**
 > 
-> To give you the freedom to explore, we don't enforce strict workflows in playgrounds. That means you might do something that breaks your application or cause it to work in unexpected ways. 
+> We prioritize user autonomy in Playgrounds, opting not to enforce strict workflows. This freedom allows for experimentation, potentially leading to scenarios that might break the application or cause unexpected behavior.
 >
 > If you need to reset your progress and start over, click the **Clear** button. Then click the **Start** button to create a new playground. 
 
-You have approximately 60 minutes to use your playground app. After that, the app is deleted. 
+Please note that your playground application has a runtime of approximately 60 minutes, after which it will be automatically deleted.
