@@ -21,14 +21,17 @@ A quick resource for writing playgrounds.
 
 ## Images
 
-* Image found in global directory:
-  ```
-  ![Image](../../static/images/IMAGE_NAME.png "Example image")
-  ```
-* Image found in playground directory: 
-  ```
-  ![Image](images/IMAGE_NAME.png "Example image")
-  ```
+Image found in global directory:
+
+```
+![Image](../../static/images/IMAGE_NAME.png "Example image")
+```
+
+Image found in playground directory: 
+
+```
+![Image](images/IMAGE_NAME.png "Example image")
+```
 
 ## Stylesheet
 

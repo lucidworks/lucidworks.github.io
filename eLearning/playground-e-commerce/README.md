@@ -38,11 +38,6 @@ Try adding some index pipeline stages to manipulate the fields and values in the
 
 * **Field Mapping**. The field mapping stage is a powerful stage commonly used to delete, add, set, copy, or move fields on a document. It allows you to perform small or bulk operations, such as deleting all unmapped fields.
 * **Regex Field Extraction**. The RegEx field extraction stage is used to pull out information from one field and place it in another. For example, if you have a field with the minimum and maximum temperatures stored in one string, but you wanted to separate the values, you can use this field to do so. 
-  
-<!--
-* **Document filtering and enrichment**.
-  * **Exclude Documents**. This is different from preventing indexed documents from surfacing. Use the exclude documents to prevent documents from being indexed in the first place. 
--->
 
 > [!IMPORTANT]  
 > The final stage in the index pipeline, **Solr Indexer** is crucial for getting documents to Solr. Turning it off, moving it, or removing it may break the pipeline.
