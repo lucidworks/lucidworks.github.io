@@ -12,7 +12,6 @@ Each playground application comes equipped with user documentation detailing the
 
 Click the **Start** button to create a new playground application specifically for you, complete with a unique username and password.
 
-> [!IMPORTANT]
 > **You are in control!**
 > 
 > We prioritize user autonomy in Playgrounds, opting not to enforce strict workflows. This freedom allows for experimentation, potentially leading to scenarios that might break the application or cause unexpected behavior.
