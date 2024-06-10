@@ -29,7 +29,7 @@ permalink: /playground-site-search/
 
 **Images** 
 
-![Test image](images/test-im.png "Example image placeholder")
+![Test image](images/IMAGE_NAME.png "Example image placeholder")
 
 -->
 
@@ -47,16 +47,6 @@ It is a basic implementation and serves as an excellent introduction to Fusion a
 1. **E-books.** Downloadable publications offering in-depth information or guides on specific industry-related subjects.
 1. **Events.** Information about gatherings, conferences, workshops, or other occurrences related to our industry, both past, present, and future.
 1. **Videos.** Visual content covering informative presentations, demonstrations, or discussions on industry-specific topics.
-
-
-### Tour
-
-![Test image](images/test-im.png "Example image placeholder")
-
-> [!IMPORTANT]  
-> Add a Supademo tour here. ^^^
-
-<!-- Supademo embed. -->
 
 ### What you can do
 
@@ -107,7 +97,7 @@ In the Query Workbench, you can enable click signals to see how clicking on resu
 
 Click **Format Results**, select the **Send click signals** checkbox, and save your change. If you want to generate many signals at once, select the **Show signals generator** checkbox, and a simulate option appears when hold the pointer over a result.
 
-![Send click signals in Query Workbench](images/qwb-send-signals.png "Send click signals in Query Workbench")
+![Send click signals in Query Workbench](../../static/images/qwb-send-signals.png "Send click signals in Query Workbench")
 
 
 ### Create business rules
