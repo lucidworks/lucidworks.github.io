@@ -130,7 +130,11 @@ Rules are created automatically from your interactions, and they are available t
 
 To create query rewrites, enter a search term in the search box, and click the **Add** button that appears next to the term. Select any of the query rewrite options to create a new query rewrite. 
 
+{% raw %}
+
 <div style="position: relative; padding-bottom: calc(51.78125% + 42px); height: 0;"><iframe src="https://app.supademo.com/embed/V82C_bR_syCuDPuK48-PB" allow="clipboard-write" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+{% endraw %}
 
 Like rules, query rewrites you create in Experience Optimizer are available in the **Rewrites** screen.
 
