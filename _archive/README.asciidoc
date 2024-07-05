@@ -1,0 +1,1 @@
+This directory contains the documentation from the labs program, which is no longer used. 
