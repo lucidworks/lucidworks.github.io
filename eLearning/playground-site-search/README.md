@@ -33,9 +33,9 @@ permalink: /playground-site-search/
 
 -->
 
-## About this lab
+## About this playground
 
-This lab environment provides a controlled and secure platform to explore and experiment with a pre-configured Fusion application. The application is specifically designed for site search functionalities and is populated with diverse datasets, offering users a rich sandbox for testing and learning.
+This playground environment provides a controlled and secure platform to explore and experiment with a pre-configured Fusion application. The application is specifically designed for site search functionalities and is populated with diverse datasets, offering users a rich sandbox for testing and learning.
 
 It is a basic implementation and serves as an excellent introduction to Fusion and its core features. 
 
@@ -66,7 +66,7 @@ In this secure application, you have the ability to:
 
 Each datasource is set up in a similar way, but there are some key differences. For example, some datasources have unique values declared in **Exclusive regexes**.
 
-![Exclusive RegEx for a datasource](images/datasource-exclusive-regex.png "Datasource exclusive RegEx")
+![Exclusive RegEx for a datasource](../../static/images/datasource-exclusive-regex.png "Datasource exclusive RegEx")
 
 > [!NOTE]  
 > In many cases, key datasource configurations can be found in the advanced view. Toggle **Advanced** on to view these settings. 
@@ -79,7 +79,7 @@ Navigate to **Indexing > Index pipelines**, then choose one of the `data-lucidwo
 
 Note that they all have **Call pipeline** stages called "Intake" and "Outtake." By routing data through these separate, shared index pipelines, Fusion ensures that the data is processed the same at certain phases of indexing. This avoids the need to duplicate work across multiple index pipelines. 
 
-![Call pipeline usage](images/index-pipeline-intake.png "Call pipeline index stages")
+![Call pipeline usage](../../static/images/index-pipeline-intake.png "Call pipeline index stages")
 
 > [!TIP]
 > You can use a **Call pipeline** query pipeline stage for similar purposes.
@@ -160,9 +160,7 @@ Tags are useful for applying rules when for a specific template zone. This advan
 
 ## What's next?
 
-The site search playground is designed for you to continue exploring. 
-
-Congratulations on completing this software training lab! Now it's your turn to experiment. Try building new functionalities, delve into the data flow within Fusion, and see how you can craft the perfect search experience. 
+The site search playground is designed for you to continue exploring. Try building new functionalities, delve into the data flow within Fusion, and see how you can craft the perfect search experience. 
 
 If you're ready to move on, we recommend the following resources: 
 
