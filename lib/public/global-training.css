@@ -212,20 +212,38 @@ blockquote {
     font-size:15px;
   }
   
-  blockquote.success {
-    @extend .alert-success;
+  blockquote.note {
+    @extend .alert-note;
   }
-  blockquote.success p:before {
-    content: "✓ Success: ";
+  blockquote.note p:before {
+    content: "Note: ";
+    font-weight:bold;
+    font-size:16px;
+  }
+
+  blockquote.tip {
+    @extend .alert-tip;
+  }
+  blockquote.tip p:before {
+    content: "Tip: ";
+    font-weight:bold;
+    font-size:16px;
+  }
+
+  blockquote.important {
+    @extend .alert-important;
+  }
+  blockquote.important p:before {
+    content: "Important: ";
     font-weight:bold;
     font-size:16px;
   }
   
-  blockquote.danger {
-    @extend .alert-danger;
+  blockquote.caution {
+    @extend .alert-caution;
   }
-  blockquote.danger p:before {
-    content: "⊠ Danger: ";
+  blockquote.caution p:before {
+    content: "Caution: ";
     font-weight:bold;
     font-size:16px;
   }
@@ -234,16 +252,8 @@ blockquote {
     @extend .alert-warning;
   }
   blockquote.warning p:before {
-    content: "⚠ Warning: ";
+    content: "Warning: ";
     font-weight:bold;
     font-size:16px;
   }
   
-  blockquote.info {
-    @extend .alert-info;
-  }
-  blockquote.info p:before {
-    content: "ⓘ Info: ";
-    font-weight:bold;
-    font-size:16px;
-  }
