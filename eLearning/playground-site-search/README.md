@@ -32,6 +32,20 @@ permalink: /playground-site-search/
 ![Test image](images/IMAGE_NAME.png "Example image placeholder")
 
 -->
+> Some text about whatever just about long enough now. 
+{:.note}
+
+> Some text about whatever just about long enough now. 
+{:.tip}
+
+> Some text about whatever just about long enough now. 
+{:.important}
+
+> Some text about whatever just about long enough now. 
+{:.caution}
+
+> Some text about whatever just about long enough now. 
+{:.warning}
 
 ## About this playground
 
@@ -68,9 +82,8 @@ Each datasource is set up in a similar way, but there are some key differences. 
 
 ![Exclusive RegEx for a datasource](../../static/images/datasource-exclusive-regex.png "Datasource exclusive RegEx")
 
->
 > In many cases, key datasource configurations can be found in the advanced view. Toggle **Advanced** on to view these settings. 
-{:.info}
+{:.tip}
 
 #### Index pipelines
 
@@ -82,8 +95,8 @@ Note that they all have **Call pipeline** stages called "Intake" and "Outtake." 
 
 ![Call pipeline usage](../../static/images/index-pipeline-intake.png "Call pipeline index stages")
 
-> [!TIP]
 > You can use a **Call pipeline** query pipeline stage for similar purposes.
+{:.tip}
 
 
 #### Query pipeline
@@ -107,8 +120,8 @@ Navigate to **Relevance > Rules**, to reach the rules editor. Make sure you're o
 
 Some examples are already set up for you. 
 
-> [!TIP]
 > You can test these rules in Experience Optimizer. View the condition and the action of a rule. Replicate the condition in Experience Optimizer, and the action will fire. 
+{:.tip}
 
 ### Create rewrites
 
@@ -120,8 +133,8 @@ Add new rewrites, modify the existing ones, or delete everything to start over.
 
 Now that you've created some business rules and rewrites, navigate to Experience Optimizer to see how to create them from a natural search experience. 
 
-> [!NOTE]  
 > Click the **Start task** button, if you want to start curating the search experience. 
+{:.tip}
 
 Begin by entering a search term in the search box. From the results list, you can choose to block a document from appearing, pin a document in its current position, bury a document lower in the result, or boost a document higher in the result. If you want to pin a document in a specific position, you can drag it where you want it.
 
