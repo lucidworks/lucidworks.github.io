@@ -4,20 +4,20 @@ A quick resource for writing playgrounds.
 
 ## Useful admonitions
 
-> [!NOTE]  
-> Highlights information that users should take into account, even when skimming.
+> Esse tempor dolor veniam deserunt ex proident. Occaecat sint nisi magna aliqua incididunt dolor consequat minim incididunt consectetur. Dolore proident est minim tempor. Cupidatat amet deserunt non reprehenderit mollit elit esse ea ea.
+{:.note}
 
-> [!TIP]
-> Optional information to help a user be more successful.
+> Esse tempor dolor veniam deserunt ex proident. Occaecat sint nisi magna aliqua incididunt dolor consequat minim incididunt consectetur. Dolore proident est minim tempor. Cupidatat amet deserunt non reprehenderit mollit elit esse ea ea.
+{:.tip}
 
-> [!IMPORTANT]  
-> Crucial information necessary for users to succeed.
+> Esse tempor dolor veniam deserunt ex proident. Occaecat sint nisi magna aliqua incididunt dolor consequat minim incididunt consectetur. Dolore proident est minim tempor. Cupidatat amet deserunt non reprehenderit mollit elit esse ea ea.
+{:.important}
 
-> [!WARNING]  
-> Critical content demanding immediate user attention due to potential risks.
+> Esse tempor dolor veniam deserunt ex proident. Occaecat sint nisi magna aliqua incididunt dolor consequat minim incididunt consectetur. Dolore proident est minim tempor. Cupidatat amet deserunt non reprehenderit mollit elit esse ea ea.
+{:.caution}
 
-> [!CAUTION]
-> Negative potential consequences of an action.
+> Esse tempor dolor veniam deserunt ex proident. Occaecat sint nisi magna aliqua incididunt dolor consequat minim incididunt consectetur. Dolore proident est minim tempor. Cupidatat amet deserunt non reprehenderit mollit elit esse ea ea.
+{:.warning}
 
 ## Images
 

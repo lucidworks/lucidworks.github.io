@@ -10,7 +10,6 @@ permalink: /playground-e-commerce/
 
 This playground environment provides a controlled and secure platform to explore and experiment with a pre-configured Fusion application. The application is specifically designed for e-commerce functionalities, including an expansive data source of electronics products and accessories and a library of query rewrites. 
 
-
 ### Datasources
 
 There is one data source in the e-commerce playground: **Electronics**. The data source contains over 40,000 products, from televisions to printers, speakers, and home appliances. 
@@ -39,8 +38,8 @@ Try adding some index pipeline stages to manipulate the fields and values in the
 * **Field Mapping**. The field mapping stage is a powerful stage commonly used to delete, add, set, copy, or move fields on a document. It allows you to perform small or bulk operations, such as deleting all unmapped fields.
 * **Regex Field Extraction**. The RegEx field extraction stage is used to pull out information from one field and place it in another. For example, if you have a field with the minimum and maximum temperatures stored in one string, but you wanted to separate the values, you can use this field to do so. 
 
-> [!IMPORTANT]  
 > The final stage in the index pipeline, **Solr Indexer** is crucial for getting documents to Solr. Turning it off, moving it, or removing it may break the pipeline.
+{:.important}
 
 
 #### Query pipeline
@@ -49,8 +48,8 @@ Head to the Query Workbench by navigating to **Querying > Query Workbench**.
 
 From here, you can enter a query and view the results. Try turning stages on and off, then investigate what changed in the results. You can also customize the facets in this view. 
 
-> [!TIP]
 > This query pipeline makes use of facet fields and range facet fields. A range facet is already created for the regular price. Try creating a range facet for the sales price, `salePrice_d`. 
+{:.tip}
 
 ### Create signals
 
@@ -77,8 +76,8 @@ Navigate to **Relevance > Rules**, to reach the rules editor. Make sure you're o
 
 Some examples are already set up for you. 
 
-> [!TIP]
 > You can test these rules in Predictive Merchandiser. View the condition and the action of a rule. Replicate the action in Predictive Merchandiser, and the action will fire. 
+{:.tip}
 
 ### Create rewrites
 
@@ -90,18 +89,19 @@ Add new rewrites, modify the existing ones, or delete everything to start over.
 
 Now that you've created some business rules and rewrites, navigate to Predictive Merchandiser to see how to create them from a natural search experience. 
 
-> [!NOTE]  
+ 
 > Click the **Start task** button, if you want to start curating the search experience. 
+{:.tip}
 
 Begin by entering a search term in the search box. From the results list, you can choose to block a document from appearing, pin a document in its current position, bury a document lower in the result, or boost a document higher in the result. If you want to pin a document in a specific position, you can drag it where you want it.
 
-<!-- <div style="position: relative; padding-bottom: calc(51.78125% + 42px); height: 0;"><iframe src="https://app.supademo.com/embed/ft9Rms9EBaqQFnduqRt5P" allow="clipboard-write" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div> -->
+<div style="position: relative; padding-bottom: calc(51.78125% + 42px); height: 0;"><iframe src="https://app.supademo.com/embed/ft9Rms9EBaqQFnduqRt5P" allow="clipboard-write" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 Rules are created automatically from your interactions, and they are available to edit, delete, or publish in the **Rules** screen.
 
 To create query rewrites, enter a search term in the search box, and click the **Add** button that appears next to the term. Select any of the query rewrite options to create a new query rewrite. 
 
-<!-- <div style="position: relative; padding-bottom: calc(51.78125% + 42px); height: 0;"><iframe src="https://app.supademo.com/embed/V82C_bR_syCuDPuK48-PB" allow="clipboard-write" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div> -->
+<div style="position: relative; padding-bottom: calc(51.78125% + 42px); height: 0;"><iframe src="https://app.supademo.com/embed/V82C_bR_syCuDPuK48-PB" allow="clipboard-write" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 Like rules, query rewrites you create in Predictive Merchandiser are available in the **Rewrites** screen.
 

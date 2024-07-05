@@ -12,7 +12,7 @@
     --dark-pink: rgba(197, 37, 116, 1.0);
     --pink: rgba(237, 48, 136, 1.0);
     --light-pink: rgba(244, 153, 193, 1.0);
-    --dark-gray: rgba(93, 107, 120, 1.0);
+    --dark-gray: rgb(61, 70, 78);
     --medium-gray: rgba(125, 139, 153, 1.0);
     --gray: rgba(193, 203, 214, 1.0);
     --light-gray: rgba(228, 234, 240, 1.0);
@@ -214,7 +214,7 @@ blockquote {
     margin-left: 1em;
     margin-right: 1em;
     border-width: 1px;
-    border-style: solid;
+    border-style: none;
     border-color: var(--gray);
     padding: 1.5em 1.25em;
     background-color: var(--light-gray);
@@ -222,12 +222,18 @@ blockquote {
     box-shadow: var(--shadow-2);
 }
 
+/* Admonition styles */
+
+blockquote p {
+    color: rgb(61, 70, 78);
+    font-style: normal; 
+}
+
 blockquote.note {
     @extend .alert-note;
     border-color: var(--gray);
     background-color: var(--light-gray);
 }
-
 blockquote.note p:before {
     content: "Note: ";
     font-weight: bold;
@@ -239,7 +245,6 @@ blockquote.tip {
     border-color: var(--teal);
     background-color: var(--light-teal);
 }
-
 blockquote.tip p:before {
     content: "Tip: ";
     font-weight: bold;
@@ -251,7 +256,6 @@ blockquote.important {
     border-color: var(--blue);
     background-color: var(--light-blue);
 }
-
 blockquote.important p:before {
     content: "Important: ";
     font-weight: bold;
@@ -263,7 +267,6 @@ blockquote.caution {
     border-color: var(--gold);
     background-color: var(--light-gold);
 }
-
 blockquote.caution p:before {
     content: "Caution: ";
     font-weight: bold;
@@ -275,7 +278,6 @@ blockquote.warning {
     border-color: var(--pink);
     background-color: var(--light-pink);
 }
-
 blockquote.warning p:before {
     content: "Warning: ";
     font-weight: bold;
