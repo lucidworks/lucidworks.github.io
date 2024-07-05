@@ -6,9 +6,9 @@ permalink: /playground-e-commerce/
 
 <link rel="stylesheet" href="/lib/public/global-training.css">
 
-## About this lab
+## About this playground
 
-This lab environment provides a controlled and secure platform to explore and experiment with a pre-configured Fusion application. The application is specifically designed for e-commerce functionalities, including an expansive data source of electronics products and accessories and a library of query rewrites. 
+This playground environment provides a controlled and secure platform to explore and experiment with a pre-configured Fusion application. The application is specifically designed for e-commerce functionalities, including an expansive data source of electronics products and accessories and a library of query rewrites. 
 
 
 ### Datasources
@@ -125,9 +125,7 @@ Tags are useful for applying rules when for a specific template zone. This advan
 
 ## What's next?
 
-The site search playground is designed for you to continue exploring. 
-
-Congratulations on completing this software training lab! Now it's your turn to experiment. Try building new functionalities, delve into the data flow within Fusion, and see how you can craft the perfect search experience. 
+The site search playground is designed for you to continue exploring. Try building new functionalities, delve into the data flow within Fusion, and see how you can craft the perfect search experience. 
 
 If you're ready to move on, we recommend the following resources: 
 
