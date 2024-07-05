@@ -124,27 +124,16 @@ Now that you've created some business rules and rewrites, navigate to Experience
 
 Begin by entering a search term in the search box. From the results list, you can choose to block a document from appearing, pin a document in its current position, bury a document lower in the result, or boost a document higher in the result. If you want to pin a document in a specific position, you can drag it where you want it.
 
-{% raw %}
 
-<div style="position: relative; padding-bottom: calc(51.78125% + 42px); height: 0;">
-
-<iframe src="https://app.supademo.com/embed/ft9Rms9EBaqQFnduqRt5P" allow="clipboard-write" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" data-external="1">
-
-</iframe>
-
-{% endraw %}
-
-</div>
+<div style="position: relative; padding-bottom: calc(51.78125% + 42px); height: 0;"><iframe src="https://app.supademo.com/embed/ft9Rms9EBaqQFnduqRt5P" allow="clipboard-write" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" data-external="1"></iframe></div>
 
 Rules are created automatically from your interactions, and they are available to edit, delete, or publish in the **Rules** screen.
 
 To create query rewrites, enter a search term in the search box, and click the **Add** button that appears next to the term. Select any of the query rewrite options to create a new query rewrite. 
 
-{% raw %}
 
 <div style="position: relative; padding-bottom: calc(51.78125% + 42px); height: 0;"><iframe src="https://app.supademo.com/embed/V82C_bR_syCuDPuK48-PB" allow="clipboard-write" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
-{% endraw %}
 
 Like rules, query rewrites you create in Experience Optimizer are available in the **Rewrites** screen.
 
