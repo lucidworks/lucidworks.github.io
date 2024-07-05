@@ -133,14 +133,14 @@ pre code p {
 }
 
 button {
-  background-color: rgba(197, 37, 116, 1.0); 
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+    background-color: rgba(197, 37, 116, 1.0);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 
 /* Lists */
@@ -177,7 +177,9 @@ ul {
     list-style: disc;
 }
 
-ul li { padding: 5px 5px; }
+ul li {
+    padding: 5px 5px;
+}
 
 ul li::marker {
     font-size: 18px;
@@ -202,58 +204,80 @@ a:hover {
 }
 
 blockquote {
-    all: unset;
-}
-
-blockquote {
     @extend .alert;
     @extend .alert-primary;
     @extend .pb-0;
-    font-size:15px;
-  }
-  
-  blockquote.note {
+    font-size: 15px;
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--gray);
+    padding: 1.5em 1.25em;
+    background-color: var(--light-gray);
+    border-radius: 5px;
+    box-shadow: var(--shadow-2);
+}
+
+blockquote.note {
     @extend .alert-note;
-  }
-  blockquote.note p:before {
+    border-color: var(--gray);
+    background-color: var(--light-gray);
+}
+
+blockquote.note p:before {
     content: "Note: ";
-    font-weight:bold;
-    font-size:16px;
-  }
+    font-weight: bold;
+    font-size: 16px;
+}
 
-  blockquote.tip {
+blockquote.tip {
     @extend .alert-tip;
-  }
-  blockquote.tip p:before {
-    content: "Tip: ";
-    font-weight:bold;
-    font-size:16px;
-  }
+    border-color: var(--teal);
+    background-color: var(--light-teal);
+}
 
-  blockquote.important {
+blockquote.tip p:before {
+    content: "Tip: ";
+    font-weight: bold;
+    font-size: 16px;
+}
+
+blockquote.important {
     @extend .alert-important;
-  }
-  blockquote.important p:before {
+    border-color: var(--blue);
+    background-color: var(--light-blue);
+}
+
+blockquote.important p:before {
     content: "Important: ";
-    font-weight:bold;
-    font-size:16px;
-  }
-  
-  blockquote.caution {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+blockquote.caution {
     @extend .alert-caution;
-  }
-  blockquote.caution p:before {
+    border-color: var(--gold);
+    background-color: var(--light-gold);
+}
+
+blockquote.caution p:before {
     content: "Caution: ";
-    font-weight:bold;
-    font-size:16px;
-  }
-  
-  blockquote.warning {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+blockquote.warning {
     @extend .alert-warning;
-  }
-  blockquote.warning p:before {
+    border-color: var(--pink);
+    background-color: var(--light-pink);
+}
+
+blockquote.warning p:before {
     content: "Warning: ";
-    font-weight:bold;
-    font-size:16px;
-  }
-  
+    font-weight: bold;
+    font-size: 16px;
+}
