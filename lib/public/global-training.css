@@ -132,23 +132,6 @@ pre code p {
     font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
 }
 
-blockquote {
-    background: var(--dark-teal);
-    margin-left: -1.75rem;
-    margin-right: 1.75rem;
-    margin-top: 0;
-    padding-bottom: 0;
-    padding-left: 1.42188rem;
-    padding-right: 0;
-    padding-top: 0;
-    margin-bottom: 1.75rem;
-    font-size: 1.00rem;
-    line-height: 1.75rem;
-    color: var(--white);
-    font-style: italic;
-    border-left: 0.32813rem solid hsla(0, 0%, 0%, 0.9);
-}
-
 button {
   background-color: rgba(197, 37, 116, 1.0); 
   border: none;
@@ -217,3 +200,47 @@ a:active {
 a:hover {
     border-bottom-width: 2px;
 }
+
+
+blockquote {
+    @extend .alert;
+    @extend .alert-primary;
+    @extend .pb-0;
+    font-size:15px;
+  }
+  
+  blockquote.success {
+    @extend .alert-success;
+  }
+  blockquote.success p:before {
+    content: "✓ Success ";
+    font-weight:bold;
+    font-size:16px;
+  }
+  
+  blockquote.danger {
+    @extend .alert-danger;
+  }
+  blockquote.danger p:before {
+    content: "⊠ Danger ";
+    font-weight:bold;
+    font-size:16px;
+  }
+  
+  blockquote.warning {
+    @extend .alert-warning;
+  }
+  blockquote.warning p:before {
+    content: "⚠ Warning ";
+    font-weight:bold;
+    font-size:16px;
+  }
+  
+  blockquote.info {
+    @extend .alert-info;
+  }
+  blockquote.info p:before {
+    content: "ⓘ Further Information ";
+    font-weight:bold;
+    font-size:16px;
+  }

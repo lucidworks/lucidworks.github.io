@@ -68,8 +68,9 @@ Each datasource is set up in a similar way, but there are some key differences. 
 
 ![Exclusive RegEx for a datasource](../../static/images/datasource-exclusive-regex.png "Datasource exclusive RegEx")
 
-> [!NOTE]  
+>
 > In many cases, key datasource configurations can be found in the advanced view. Toggle **Advanced** on to view these settings. 
+{:.info}
 
 #### Index pipelines
 
