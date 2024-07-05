@@ -217,3 +217,47 @@ a:active {
 a:hover {
     border-bottom-width: 2px;
 }
+
+
+blockquote {
+    @extend .alert;
+    @extend .alert-primary;
+    @extend .pb-0;
+    font-size:15px;
+  }
+  
+  blockquote.success {
+    @extend .alert-success;
+  }
+  blockquote.success p:before {
+    content: "✓ Success ";
+    font-weight:bold;
+    font-size:16px;
+  }
+  
+  blockquote.danger {
+    @extend .alert-danger;
+  }
+  blockquote.danger p:before {
+    content: "⊠ Danger ";
+    font-weight:bold;
+    font-size:16px;
+  }
+  
+  blockquote.warning {
+    @extend .alert-warning;
+  }
+  blockquote.warning p:before {
+    content: "⚠ Warning ";
+    font-weight:bold;
+    font-size:16px;
+  }
+  
+  blockquote.info {
+    @extend .alert-info;
+  }
+  blockquote.info p:before {
+    content: "ⓘ Further Information ";
+    font-weight:bold;
+    font-size:16px;
+  }
