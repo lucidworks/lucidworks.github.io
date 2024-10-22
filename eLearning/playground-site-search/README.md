@@ -55,58 +55,72 @@ In this secure application, you have the ability to:
 * Create, modify, and delete index and query pipeline stages.
 * Work in the Query Workbench. 
 * Use the rules editor to create business rules, synonyms, misspelling corrections, and more. 
-* Play with Experience Optimizer to curate your ideal search experience.
 * Access most Fusion features and functionality, even when not pre-configured for this playground. 
 
 ## Things to try
 
-### Explore the data
+### Inspect the index pipelines
 
-#### Datasources
+Open the Index Workbench, then load and inspect each datasource and its index pipeline.
 
-Each datasource is set up in a similar way, but there are some key differences. For example, some datasources have unique values declared in **Exclusive regexes**.
+Notice that although the datasources are all very simple and share the same parser, they each use a different index pipeline.
+This is because the datasets are each slightly different.
+The datasources and their corresponding index pipelines follow a predictable naming pattern so that you can easily infer which pipeline goes with which datasource.
 
-![Exclusive RegEx for a datasource](../../static/images/datasource-exclusive-regex.png "Datasource exclusive RegEx")
+For example, the blog data includes a built-in `yearModified_i` field, but the other datasets do not.
+The index pipelines for the other datasets create that field using a regular expression that matches part of the `lastModified_dt` field.
+Try disabling the "Create yearModified_i field" stage and notice that the field disappears from the data preview.
 
-> In many cases, key datasource configurations can be found in the advanced view. Toggle **Advanced** on to view these settings. 
-{:.tip}
-
-#### Index pipelines
-
-Each datasource is pointed to a unique index pipeline, following a predictable naming pattern. For example, the blog datasource points to an index pipeline called `data-lucidworks-blog`.
-
-Navigate to **Indexing > Index pipelines**, then choose one of the `data-lucidworks-DATA_TYPE` pipelines. 
-
-Note that they all have **Call pipeline** stages called "Intake" and "Outtake." By routing data through these separate, shared index pipelines, Fusion ensures that the data is processed the same at certain phases of indexing. This avoids the need to duplicate work across multiple index pipelines. 
+Note that all of the index pipelines have a **Call pipeline** stage called "Outtake."
+This stage calls an additional pipeline called "lucidworks-final".
+By routing data through a separate, shared index pipeline, Fusion ensures that the data is processed the same way at certain phases of indexing.
+This avoids the need to duplicate work across multiple index pipelines. 
 
 ![Call pipeline usage](../../static/images/index-pipeline-intake.png "Call pipeline index stages")
 
 > You can use a **Call pipeline** query pipeline stage for similar purposes.
 {:.tip}
 
+### Run the datasources
+
+Run each of the datasources until all of them have completed their runs.
+You can do this in the Index Workbench or in the **Datasources** panel.
+
+### Explore the data
+
+Before you try exploring the data, make sure you have run all of the datasources.
+Then open the Query Workbench by navigating to **Querying > Query Workbench**.
 
 #### Query pipeline
 
-Head to the Query Workbench by navigating to **Querying > Query Workbench**.
-
-From here, you can enter a query and view the results. Try turning stages on and off, then investigate what changed in the results. You can also customize the facets in this view.
+From the Query Workbench, you can enter a query and view the results. 
+Try turning stages on and off, then investigate what changed in the results. 
+You can also customize the facets in this view.
 
 ### Create signals
 
 In the Query Workbench, you can enable click signals to see how clicking on results affects the document's score (relevancy) and position within the results. 
 
-Click **Format Results**, select the **Send click signals** checkbox, and save your change. If you want to generate many signals at once, select the **Show signals generator** checkbox, and a simulate option appears when hold the pointer over a result.
+Click **Format Results**, select the **Send click signals** checkbox, and save your change. 
+If you want to generate many signals at once, select the **Show signals generator** checkbox, and a simulate option appears when hold the pointer over a result.
 
 ![Send click signals in Query Workbench](../../static/images/qwb-send-signals.png "Send click signals in Query Workbench")
 
 
 ### Create business rules
 
-Navigate to **Relevance > Rules**, to reach the rules editor. Make sure you're on the **Rules** screen, then start creating rules by clicking the **Add** button. 
+Navigate to **Relevance > Rules**, to reach the rules editor. 
+Make sure you're on the **Rules** screen, then start creating rules by clicking the **Add** button. 
+
+<!-- currently the pre-defined rules don't show up in the deployed playground
 
 Some examples are already set up for you. 
 
-> You can test these rules in Experience Optimizer. View the condition and the action of a rule. Replicate the condition in Experience Optimizer, and the action will fire. 
+-->
+
+> You can test these rules by clicking **Optimizer** to open the Experience Optimizer. 
+> View the condition and the action of a rule. 
+> Replicate the condition in Experience Optimizer, and the action fires. 
 {:.tip}
 
 ### Create rewrites
@@ -149,7 +163,7 @@ In Experience Optimizer, you can create a custom landing template popular with n
 
 ### Configure triggers for a template
 
-You can trigger a template in Experience Optimizer based on conditions such as a time range, specific searches, or the URL context. If the required conditions are met, the template will load instead of the default, giving you fine-tuned control over the zone setup and layout. 
+You can trigger a template in Experience Optimizer based on conditions such as a time range, specific searches, or the URL context. If the required conditions are met, the template loads instead of the default, giving you fine-tuned control over the zone setup and layout. 
 
 ### Resolve conflicting rules
 
