@@ -69,7 +69,7 @@ The datasources and their corresponding index pipelines follow a predictable nam
 
 For example, the blog data includes a built-in `yearModified_i` field, but the other datasets do not.
 The index pipelines for the other datasets create that field using a regular expression that matches part of the `lastModified_dt` field.
-Try disabling the **Create yearModified_i field** stage and notice that the field disappears from the data preview.
+Try disabling the "Create yearModified_i field" stage and notice that the field disappears from the data preview.
 
 Note that all of the index pipelines have a **Call pipeline** stage called "Outtake."
 This stage calls an additional pipeline called "lucidworks-final".
